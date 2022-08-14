@@ -1,0 +1,229 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+
+body {
+    
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+    font-size: 14px;
+    color: #fff;
+    font-weight: normal;
+	line-height: 24px;
+	margin: 0px;
+	padding: 0px;
+	max-width: 990px;
+	width: 100%;
+}
+body.ko-KR {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+}
+
+.Main {
+    background: #5c69b7 !important;
+  }
+
+
+.Header {
+    border-bottom: 1px solid #fff;
+    margin-bottom: 1em;
+    padding-left: 1.4em;
+}
+
+.last{
+    font-size: 30px;
+    width: 100%;
+    text-align: left;
+    height: 38px;
+    margin-top: 5px;
+    padding-right: 5px;
+    display: inline;
+	color: #fff;
+}
+
+.changePhrase,
+.change,
+.changePer{
+	display: inline-block;
+	color: #BEC3E3;
+}
+.change1,
+.changePer1{
+	display: inline-block;
+	float: right;
+	position: relative;
+}
+.change1,
+.changePer1{
+	padding-right: 20px;
+    padding-top: 9px;
+}
+.positive_change{
+	padding-left: 20px;
+	
+}
+
+.changePer1_positive{
+	padding-left: 20px;
+	
+}
+
+.change1 .negative_change,
+.changePer1 .negative_changePer{
+	color:#ffff00;
+}
+.change1 .positive_change,
+.changePer1 .positive_changePer{
+	color:#ffff00;
+}
+
+body.ko-KR .positive_change{
+	padding-left: 20px;
+	
+}
+
+body.ko-KR .negative_change{
+	padding-left: 20px;
+	
+}
+
+.GraphContainer {
+    height: 150px;
+	width: 100%;
+    margin-bottom: 2em;
+}
+
+.GraphArea{
+	width: 100%;
+    height: 200px;
+}
+.change1.positive::before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 65%;
+    left: 0.5em;
+    margin-top: -0.4em;
+    border-left: 0.4em solid transparent;
+    border-right: 0.4em solid transparent;
+    border-bottom: 0.7em solid #ffff00;
+}
+
+.change1.negative::before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 69%;
+    left: -1em;
+    margin-top: -0.4em;
+    border-left: 0.4em solid transparent;
+    border-right: 0.4em solid transparent;
+    border-top: 0.7em solid #ffff00;
+}
+.ko-KR .change1.negative::before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 69%;
+    left: 0.2em!important;
+    margin-top: -0.4em;
+    border-left: 0.4em solid transparent;
+    border-right: 0.4em solid transparent;
+    border-top: 0.7em solid #ffff00;
+  }
+.Row {
+    display: inline-block;
+    width: 100%;
+    max-width: 19.33%;
+    border-right: 1px solid #7984c3;
+    margin: 20px 0;
+}
+.Row:last-child{
+    border-right: 0;
+}
+.Label,
+.Data {
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    
+
+}
+
+/* tooltip */
+
+.GraphContainer + div div:nth-child(2) div {
+font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+background: #5c69b7;
+color: #65ffb2;
+border:1px solid #5c69b7
+}
+.GraphContainer + div div:nth-child(1) svg rect {
+stroke:#65ffb2;
+stroke-width: 0;
+}
+
+.data > span.last {
+    font-size: 14px !important;
+    padding-left: 0;
+}
+.Data > span.open,
+.Data > span.high,
+.Data > span.low{
+    color: #65ffb2;
+}
+.Right {
+    background: #6b76bc;
+    border-radius: 10px;
+}
+.middle {
+    margin-bottom: 1em;
+}
+@media (max-width:639px){
+.Right{
+    font-size:12px ;
+}
+.change1, .changePer1 {
+    padding-top: 5px;
+}
+.last {
+    padding-right: 0px;
+
+}
+.change1, .changePer1{
+    padding-right: 5px;
+}
+.middle > .change,
+.middle > .changePer{
+    display: none;
+}
+.change1.positive::before {
+    top: 20px;
+}
+.change1.negative::before {
+    top: 20px;
+}
+}
+
+@media (max-width:480px){
+    .Right{
+        font-size:10px ;
+    }
+    body{
+    font-size: 12px;
+    }
+    body.ko-KR .positive_change {
+        position: relative;
+        top: 3px;
+    }
+    span.changePer.positive.positive_changePer {
+        position: relative;
+        top: 3px;
+    }
+    body.ko-KR .positive_change {
+        padding-left: 15px;
+    }
+
+}

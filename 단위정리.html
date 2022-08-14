@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자단위정리</title>
+    <style>
+        html{
+            /* html 기본 폰트사이즈 16px,  100%센트로 지정되어있다*/
+            font-size: 
+        };
+
+    </style>
+</head>
+<body>
+    <!-- em단위는  싸고있는 부모의 곱한값으로 계산 (%와 유사함)-->
+    <div class="em1" style="font-size: 2em;"> <!-- html 16px x 2em = 32px >  -->
+        em부모
+        <div class="em2" style="font-size: 2em;"> <!-- 부모 em1 32px x 2em = 64px -->
+            em자식
+        </div>
+    </div>
+
+    <!-- rem단위는 루트인 html이 기준이된다. -->
+    <div class="rem1" style="font-size: 1rem;"> <!-- html 16px x 1rem = 16px -->
+        rem부모
+        <div class="rem2" style="font-size: 2rem;"> <!-- html 16px x 2rem = 32px -->
+            rem자식
+        </div>
+    </div>
+
+    <!-- vw,vh 단위는 보이는화면 기준이 된다. 50vw(보이는화면의 너비) , 50vh(보이는화면의 높이) -->
+    <div class="wh1" style="font-size: 20vh">
+        vw,vh 부모
+        <div class="wh2" style="font-size: 10vw">
+            <!-- 부모영역안에 있는 자식을 뷰포트기준으로 하면 부모영역 상관없이
+            보이는 영역기준이기때문에 벗어날수도있다 -->
+            <!-- vw,vh 자식 -->
+        </div>
+    </div>
+    <!-- vmin은 너비,높이중 작은값을 기준으로정함 -->
+    <!-- vmax는 너비,높이중 높은값을 기준으로정함 -->
+
+
+    <!-- %는  부모요소의 상대적으로 크기가 계산-->
+    <div class="P1" style="font-size: 50%;">
+         <!--싸고있는 body는 사이즈가 정해져있지않아 그위의 html 의 기본값 픽셀인 16px을 받고
+        그 16px의 50퍼센트는 8px이지만 html 은 최소 10px 까지만 표현을 허용하기때문에 10px이다  -->
+        퍼센트
+    </div>
+    
+    
+    
+</body>
+</html>

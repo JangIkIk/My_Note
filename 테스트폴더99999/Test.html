@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    html,
+    body {
+      width: 1200px;
+      height: 100vh;
+    }
+
+    body {
+      background-color: antiquewhite;
+    }
+
+    .btn {
+      background-color: rgb(255, 0, 0);
+    }
+
+    .bt1 {
+      background-color: blue;
+    }
+    .bt2 {
+      background-color: yellow;
+    }
+    .bt3 {
+      background-color: green;
+    }
+  </style>
+  <script>
+    // const cl = function(){
+    //     console.log("정상");
+
+    //         let btn = document.querySelector(".btn");
+
+    //         btn.addEventListener("click",f1);
+
+    //         function f1(){
+
+    //             console.log("온클릭펑션");
+    //             btn.classList.toggle("bt1");
+    //             let btnt = btn.classList.contains("bt1");
+    //             console.log(btnt);
+
+    //             btn.innerText = btnt? "시작":"정지";
+    //         };
+
+    // btn.onclick = function(){
+    //     console.log("온클릭펑션");
+    //     btn.classList.toggle("bt1");
+    //     let btnt = btn.classList.contains("bt1");
+    //     console.log(btnt);
+
+    //     btn.innerText = btnt? "시작":"정지";
+
+    // };
+
+    // };
+
+    //         window.addEventListener("DOMContentLoaded",cl)
+
+    // const chgimg = function(){
+    //     console.log("정상");
+
+    //     let gif = document.querySelector("#gif");
+    //     console.log("gif:",gif);
+
+    //     let btn = document.querySelectorAll(".btn");
+    //     console.log("btn",btn);
+
+    //     gif.addEventListener("click",function(event){
+    //         event.target.style.backgroundColor = "red";
+    //     });
+
+    //     gif.onclick=function(){};
+    // };
+
+    // window.addEventListener("DOMContentLoaded",chgimg);
+  </script>
+  <body>
+    <!-- <h1>스크립트로 src속성변경</h1> -->
+    <!-- <div class="photo"> -->
+    <!-- <img id="gif" src="../마지막프로젝트08.10/프로젝트이미지/유성.png" alt="유성"> -->
+    <!-- </div> -->
+    <!-- <img src="../imgs/mylogo_14.png" alt=""> -->
+    <!-- <div class="btbx"> -->
+    <!-- <button class="btn">바꾸기</button> -->
+    <!-- <button class="btn">여유</button> -->
+    <!-- </div> -->
+
+    <!-- 
+        <h1>클래스 toggle</h1>
+            <div class="btn">버튼0</div> -->
+    <p>클릭하세요. 클릭한 곳의 좌표가 표시됩니다.</p>
+    <em class="message"></em>
+
+    <script>
+    function showCoords(e) {
+        // e: event object
+        const msg = document.querySelector(".message");
+        msg.innerHTML =
+          "clientX value: " +
+          e.clientX +
+          "<br>" +
+          "clientY value: " +
+          e.clientY;
+      }
+      addEventListener("click", showCoords); // 참조하는게 없으면 기본 window 전역 객체
+    </script>
+  </body>
+</html>

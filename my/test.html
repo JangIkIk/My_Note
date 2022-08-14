@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+
+  <style>
+    html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            /* 보이는 화면을 채움
+            -> 자식요소 중 높이값이 %일 경우에 기준이됨! */
+        }
+
+        /* 비율유지박스 */
+        .rbx {
+          position: relative;
+          /* 비율유지 속박스의 부모자격! */
+          width: 60%;
+          
+          /* height: 50%; */
+          background-color: rgb(230, 134, 8);
+          margin: 0 auto;
+            
+        }
+        /* 자식요소 블록박스에 패딩탑%로 주면?
+        -> 부모박스 가로크기에 대한 정확한 비율로 패딩이 생김
+        -> 100%는 부모의 가로크기와 동일함 1:1비율
+        -> 직접 블록요소를 넣으면 변경위험이 있으므로
+        가상요소 ::before를 사용하여 블록요소를 대신한다 */
+        
+        /* .jasik{ */
+          /* width: 100%; */
+          /* height: 100%; */
+          /* padding-top: 50%; */
+          /* background-color: blue; */
+        /* } */
+
+        .rbx::before{
+          content: '';
+          display: block;
+          padding-top: 50%;
+
+          /* 
+            가로 : 세로 = 16 : 9 = 100 : x
+            x = 9 * 100 / 16 = 56.25%
+          */
+        background-color: blue; 
+        }
+
+        
+        
+        /* 4:3 비율변경 class  */
+        /* .rbx2::before{
+          padding-top: 75%; */
+
+          /* 
+            4: 3 = 100 : x
+
+            x = 300 / 4 = 75%
+          */
+
+        /* } */
+
+
+        /* 비율유지 속박스 */
+        /* 비율유지 부모박스 내부에 공간확보! */
+        .rbxIn{
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          background-image: url(../Test_imags/나무병우너.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        
+
+        /* 내용셋팅 */
+        /* 부모는? .rbxIn */
+        .cat{
+            position: absolute;
+            bottom: 2%;
+            left: 5%;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            font-size: 1.5vw;
+            font-weight: bold;
+            line-height: 2;
+            text-shadow: 2px 2px 2px #000;
+        }
+
+
+  </style>
+</head>
+<body>
+  <div class="rbx">
+    <div class="rbxIn">
+      <dl class="cat">
+          <dt>1</dt>
+          <dd>2</dd>
+          <dd>3</dd>
+          <dd>4</dd>
+      </dl>
+    </div>
+  
+</body>
+</html>

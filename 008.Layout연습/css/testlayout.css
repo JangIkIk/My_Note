@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* 레이아웃 연습1 */
+
+/* 외부파일 합치기 */
+@import url(reset.css);
+html.body{
+  margin: 0;
+  padding: 0;
+}
+
+body *{
+  outline: 1px solid black;
+}
+
+.cbx1{
+  display: inline-block;
+  text-align: center;
+  width: 200px;
+  height: 70px;
+}
+.cbx2{
+  display: inline-block;
+  width: 300px;
+  height: 160px;
+}
+.cbx3{
+  display: inline-block;
+  width: 150px;
+  height: 160px;
+}
+.cbx4{
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+}
+.cbx5{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+.cbx6{
+  display: inline-block;
+  width: 100px;
+  height: 80px;
+}
+.cbx7{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+.cbx8{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+.cbx9{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+
+

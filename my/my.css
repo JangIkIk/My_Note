@@ -1,0 +1,556 @@
+@charset "utf-8";
+/******************************************************* 구조 *******************************************************/
+body{
+    /* 전체배경 색,이,반,고,위/크 */
+    /* background: url(../002.CSS학습/images/space.jpg)
+    no-repeat fixed center/cover; */
+    /* background: linear-gradient(rgba(0, 0, 0, 0.986), gray); */
+    background-color: black;
+    font-family: fantasy
+}
+
+.top{
+    height: 115px;
+    color:  white;
+    background-color:   black;
+
+}
+
+.mid{
+    min-height: 800px;
+    color: white;
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 1.50), rgba(143, 136, 141, 0.73), rgba(0, 0, 0, 1.50)),
+    url('../Test_imags/우주이미지.jpg');
+}
+
+.bottom{
+    height: 100px;
+    color: white;
+    background-color: black;
+
+}
+
+body *{
+    /* outline: 1px dotted black; */
+}
+
+a{
+    color: gold;
+}
+
+
+
+
+/******************************************************* 초기화 *******************************************************/
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+ul,ol,li,h1,a,div,span{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+
+}
+
+
+/******************************************************* 공통 *******************************************************/
+
+.ibx{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+/******************************************************* 상단 *******************************************************/
+
+h1{
+    /* h1 텍스트 중앙정렬 */
+    text-align: center;
+    padding: 15px;
+    letter-spacing: 10px;
+    text-shadow: 10px 10px 10px white;
+    
+    
+}
+
+h1::after{
+    /* 제목밑에 밑줄 */
+    content: '';
+    display:block;
+    border-bottom: 1px solid white;
+    width: 100px;
+    margin: 0 auto;
+
+}
+
+.tmode{
+    /* 상위부모 */
+    position: relative;
+}
+
+.umode{
+    /* .tmode 자식 */
+    position: absolute;
+    top: -50px;
+    right: 25px;
+}
+
+.umode>li{
+    /* 모드영역 가로정렬 */
+    float: left;
+    /* 모드영영 간격 */
+    margin: 0 10px;
+    
+}
+
+
+
+.umode>li:hover{
+    /* 아이콘영역 오버시 */
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+.umode>li>a{
+    /* 모드영역의 버튼공간 넓히기 */
+    display: block;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.umode::after{
+    /* 모드영역 플롯흐름 해제 */
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.umode>li:nth-child(1) a{
+    /* 지구본모양 이미지 - 색상반전*/
+    background: url('../Test_imags/언어변경.png')
+    no-repeat center/contain;
+    filter: invert();
+    
+}
+.umode>li:nth-child(2) a{
+    /* 달모양 이미지 - 색상반전*/
+    background: url('../Test_imags/다크모드.png')
+    no-repeat center/contain;
+    filter: invert();
+}
+
+.ir{
+    /* a태그에 있는내용을 감추는 방법
+    기억해두자 */
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+
+
+
+
+/* 잊어버리지말자
+히든은 넘치는 자식을 숨기는거다
+top 전체를 123으로 지정을했으면 오버플로우대상은
+top이 아닌 tmenu로 지정을해서 생각을해보자 */
+.umenu{
+    /* 메뉴리스트 ul에 넓이를 줘서 중앙정렬
+    .tmenu는 보더라인 적용을위해 주지않음 */
+    width: 600px;
+    margin: 0 auto;
+    /* .smenu를 앱솔루트를준후
+    그것을 감싸는 .umenu에 부모자격을준후
+    부모를넘치는 영역을 보이지않게하는 
+    overflow : hidden으로 감춘다 */
+    /* position: relative;
+    overflow: hidden;    */
+}
+
+
+.umenu>li{
+    /* 메인메뉴 가로정렬 */
+    float: left;
+}
+
+
+
+.umenu::after{
+    /* 메뉴영역 플롯흐름 해제 */
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.tmenu{
+    /* 메인메뉴 테두리 */
+    /* border: 1px solid black; */
+    position: relative;
+}
+
+.tmenu>ul>li{
+    /* 메인메뉴 간격 및 글씨크기 */
+    font-size: 20px;
+    /* padding: 10px; */
+    width: 200px;
+    text-align: center;
+    box-sizing: border-box;
+    /* display: block; */
+    /* margin: 0 9.46%; */
+    
+}
+
+.tmenu>ul>li a{
+    /* .smenu 밑에있는 a태그 영역확장 */
+    width: 100%;
+    height: 100%;
+    display: block;
+    line-height: 40px;
+    text-shadow: 1px 1px 10px gold;
+    
+}
+
+.smenu{
+    /* 앱솔루트포지션을 줘서  .umenu밑에
+    li에 포함되지않게 유지한다*/
+    position: absolute;
+    /* padding: 10px; 
+    height 값이 0이고 메뉴를숨기려고할대
+    패딩,보더 값은 숨겨지지않는다.*/
+    width: 200px;
+    height: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0, 0)
+
+    /*  .smenu 부모는 .tmenu이다
+    앱솔루트를 주고 hidden을 주면 hidden의속성은
+    부모를 넘치는 자식을 감춘다 또한 앱솔루트는
+    부모가 있으면 부모자리에서
+    유지를하며 부모 기준으로 움직일수있지만,
+    부모없는  앱솔루트는 건들지않으면 그자리그대로
+    건들면 비행소년이다 
+
+    그러므로 transition 을 줄때도 개인적블럭으로 나온다
+    하지만 relative로 줄경우는 같이나온다 */
+}
+
+
+/* @@@@@@@@@@@ 탑메뉴 호버시영역 @@@@@@@@@@@@@@@@@@@ */
+
+.tmenu>ul>li:hover .smenu{
+    /*  .umenu밑에 각리스트 마우스를 올릴시
+    height 값이 0이던 .smenu의 height 값을
+    100px로 만든다*/
+    height: 120px;
+}
+
+.tmenu>ul>li{
+    /* 양방향 트랜지션 */
+    transition: .8s;
+}
+.tmenu>ul>li:hover{
+    /* .umenu밑에 리스트들 마우스올릴시
+    배경색 변경 */
+    background: rgba(255, 255, 255, 0.13);
+    transition: .8s;
+}
+
+
+
+.smenu ol li{
+    /* 양방향 트랜지션 */
+    transition: .8s;
+}
+.smenu ol li:hover{
+    /* 서브메뉴들 호버시 색상 */
+    background-color: rgba(255, 255, 255, 0.13);
+    
+}
+
+
+
+/* .tmenu .umenu .smenu ol{
+    position: relative;
+}
+
+
+@@@@@@@@질문예정  가운데서 진행하려는데
+왜안될까?
+또한 이것떄문에 a태그가 선택이 되지않는다
+
+.smenu>ol>li:after{
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    width: 0;
+    margin: 0 auto;
+ 
+}
+.smenu>ol>li:hover::after{
+    height: 100%;
+    width: 100%;
+   background-color: rgba(240, 248, 255, 0.116);
+   transition: .5s;
+
+ 
+} */
+
+
+.tmenu>ul>li:nth-child(1)::after{
+    /* span태그를 주지않고
+    li에 랠리티브를주고(라인 이동을위해서)
+    가상요소로 밑줄만들기 */
+    content: '';
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    bottom: 5px;
+    /* 밑줄을 중앙에서 시작해서 끝을다시중앙으로
+    오기로 만들기위한 마영오! */
+    width: 0;
+    height: 1px;
+    border-bottom: 1px solid rgb(255, 0, 0);
+    transition: 0.5s;
+
+}
+.tmenu>ul>li:nth-child(1):hover::after{
+    width: 28%;
+
+}
+.tmenu>ul>li:nth-child(2)::after{
+    /* span태그를 주지않고
+    li에 랠리티브를주고(라인 이동을위해서)
+    가상요소로 밑줄만들기 */
+    content: '';
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    bottom: 5px;
+    /* 밑줄을 중앙에서 시작해서 끝을다시중앙으로
+    오기로 만들기위한 마영오! */
+    width: 0;
+    height: 1px;
+    border-bottom: 1px solid blue;
+    transition: 0.5s;
+
+}
+.tmenu>ul>li:nth-child(2):hover::after{
+    width: 20%;
+
+}
+.tmenu>ul>li:nth-child(3)::after{
+    /* span태그를 주지않고
+    li에 랠리티브를주고(라인 이동을위해서)
+    가상요소로 밑줄만들기 */
+    content: '';
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    bottom: 5px;
+    /* 밑줄을 중앙에서 시작해서 끝을다시중앙으로
+    오기로 만들기위한 마영오! */
+    width: 0;
+    height: 1px;
+    border-bottom: 1px solid yellow;
+    transition: 0.5s;
+
+}
+.tmenu>ul>li:nth-child(3):hover::after{
+    width: 40%;
+
+}
+
+
+
+
+
+
+
+
+/******************************************************* 메인 *******************************************************/
+
+.mid{
+    /* 상단에서 mid 밑으로밀기 */
+    padding: 250px 0;
+    box-sizing: border-box;
+}
+
+
+.ibox{
+    /* 임시표현 */
+    width: 1100px;
+    height: 300px;
+    margin: 0 auto;
+    /* background-color: aqua; */
+}
+
+.igbox{
+    /* ibox안 ig 가로정렬 */
+    width: 200px;
+    height: 300px;
+    float: left;
+    margin: 0 7.31%;
+    text-align: center;
+    border: 1px solid white;
+    box-sizing: border-box;
+
+}
+
+.ibox::after{
+    /* .ig float영향 해제 */
+    content: '';
+    display: block;
+    clear: both;
+
+}
+
+.ig1 a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(../Test_imags/mid.png);
+    background-position: -30px 5px;
+    background-size: cover;
+    box-shadow: 0px 0px 20px white;
+}
+
+.ig1{
+    position: relative;
+}
+
+.ig1::before{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 198px;
+    height: 298px;
+    background: rgba(255, 255, 255, 0.5);
+    transition: 1s;
+    
+}
+.ig1:hover::before{
+    content: '시간부족';
+    color: black;
+    width: calc(50% + 198px);
+    height: calc(50% + 298px);
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.5);
+     
+}
+
+
+
+
+
+.ig2 a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(../Test_imags/mid.png);
+    background-position: 228px 5px;
+    background-size: cover;
+    box-shadow: 0px 0px 20px white;
+}
+
+.ig2{
+    position: relative;
+}
+
+.ig2::before{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 198px;
+    height: 298px;
+    background: rgba(255, 255, 255, 0.5);
+    transition: 1s;
+    
+}
+.ig2:hover::before{
+    content: '시간부족';
+    color: black;
+    width: calc(50% + 198px);
+    height: calc(50% + 298px);
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.5);
+     
+}
+
+
+.ig3 a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(../Test_imags/mid.png);
+    background-position: -294px 5px;
+    background-size: cover;
+    box-shadow: 0px 0px 20px white;
+}
+
+.ig3{
+    position: relative;
+}
+
+.ig3::before{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 198px;
+    height: 298px;
+    background: rgba(255, 255, 255, 0.5);
+    transition: 1s;
+    
+}
+.ig3:hover::before{
+    content: '시간부족';
+    color: black;
+    width: calc(50% + 198px);
+    height: calc(50% + 298px);
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+
+/******************************************************* 하단 *******************************************************/
+.bottom{
+    /* 부모자격 자식은 .sell */
+    position: relative;
+}
+
+.bottom .info1{
+    /* 이메일 및 이용약관 */
+    text-align: center;
+    font-size: 30px;
+}
+.bottom .info2{
+    /* 네이버 지도공간 */
+    font-size: 30px;
+}
+
+.bottom .sell{
+    /* 부모는 .bottom */
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+

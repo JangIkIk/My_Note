@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 10px;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body * {
+            outline: 1px dashed gray;
+        }
+
+        .wrap {
+            position: relative;
+            height: 200px;
+        }
+
+        .tg {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            font-size: 30rem;
+        }
+
+        .tg::before {
+            content: '';
+            display: block;
+            margin-top: -10rem;
+        }
+
+        .tg span {
+            vertical-align: top;
+        }
+
+        .my {
+            font-size: 250px;
+            font-family: Verdana;
+        }
+
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <span class="tg">
+            ss
+        </span>
+    </div>
+    <div class="my">
+        ss
+    </div>
+
+</body>
+
+</html>

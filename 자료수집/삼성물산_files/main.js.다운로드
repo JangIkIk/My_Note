@@ -1,0 +1,139 @@
+var PROPERTIES = {
+	'content-01': {
+		ko: '건설',
+		en: 'E&C',
+	},
+	'content-02': {
+		ko: '가장 높은 빌딩 그 이상의 가치를 짓습니다.',
+		en: 'We deliver the highest value to customers',
+	},
+	'content-03': {
+		ko: '상사',
+		en: 'T&I',
+	},
+	'content-04': {
+		ko: '세상의 변화를 기회로 발견합니다.',
+		en: 'We capture opportunities in global trends',
+	},
+	'content-05': {
+		ko: '패션',
+		en: 'Fashion',
+	},
+	'content-06': {
+		ko: '패션 이상의 문화적 가치를 디자인합니다.',
+		en: 'We create cultural values through fashion',
+	},
+	'content-07': {
+		ko: '리조트',
+		en: 'Resort',
+	},
+	'content-08': {
+		ko: '즐거움과 행복에 혁신을 더합니다.',
+		en: 'We redefine the leisure experience',
+	},
+	// TODO : 영문 적용x
+	'content-09': {
+		ko: '뉴스룸 더보기',
+		en: 'Go to Newsroom',
+	},
+	// TODO : 글로벌 네트워크 / 바로가기 나눠야함
+	'content-10': {
+		// ko: '글로벌 네트워크 바로가기',
+		ko: ' 바로가기',
+		en: 'Go to Global Network',
+	},
+	// TODO : 영문 필요, 삼성물산 / 은 ~ / 글로벌 분기 필요
+	'content-11': {
+		ko: '<span><strong>삼성물산</strong>은 건설, 상사, 패션, 리조트</span><br class="m_block"><span>4개 부문의 사업 영역을 통해</span><br>' +
+		'<span>글로벌 사업을 활발하게 전개하고 있습니다.</span><br>',
+		// en: '<span><strong>Samsung C&T</strong>actively developing global businesses.</span> <span>through business areas of Engineering & Construction, Trading, Fashion, Resort</span><br>',
+		en : '<span><strong>Samsung C&T</strong> conducts business worldwide through four independently operated business groups –<br>Engineering & Construction, Trading & Investment, Fashion, and Resort.<span>'
+	},
+	// TODO : 영문 필요
+	'content-12': {
+		ko: '삼성물산은 건설·상사·패션·리조트 4개 부문의 사업 영역을 아우르는 복합 기업으로서 전 세계에 펼쳐진 네트워크를 통해 글로벌 사업을 활발하게 전개하고 있습니다.',
+		en: 'Samsung C&T is a complex company that runs four business areas of construction, commerce, fashion, and resort, based in 47 countries, and is actively developing global businesses through networks spread around the world.',
+	},
+	'content-13': {
+		ko: '전체',
+		en: 'All',
+	},
+	'content-14': {
+		ko: '유럽/CIS',
+		en: 'Europe/CIS',
+	},
+	'content-15': {
+		ko: '중동/아프리카',
+		en: 'Middle East/ Africa',
+	},
+	'content-16': {
+		ko: '아시아/오세아니아',
+		en: 'Asia /Oceania',
+	},
+	'content-17': {
+		ko: '미주',
+		en: 'Americas',
+	},
+	'content-18': {
+		ko: '국가',
+		en: 'Countries',
+	},
+	'content-18-counting':{
+		ko : "<strong class='__headline4'><span class='__number' data-counting='true'>46</span></strong>개국",
+		en : "<strong class='__headline4'><span class='__number' data-counting='true'>46</span></strong>"
+	},
+	'content-19': {
+		ko: '거점',
+		en: 'Offices',
+	},
+	'content-19-counting-01' : {
+		ko: "<strong class='__headline4'><span class='__number' data-counting='true'>120</span></strong>개",
+		en : "<strong class='__headline4'><span class='__number' data-counting='true'>120</span></strong>"
+	},
+	'content-19-counting-02':{
+		ko : "<strong class='__headline4'><span class='__number' data-counting='true'>16</span></strong>개",
+		en : "<strong class='__headline4'><span class='__number' data-counting='true'>16</span></strong>"
+	},
+	'content-19-counting-03':{
+		ko : "<strong class='__headline4'><span class='__number' data-counting='true'>21</span></strong>개",
+		en : "<strong class='__headline4'><span class='__number' data-counting='true'>21</span></strong>"
+	},
+	'content-19-counting-04':{
+		ko : "<strong class='__headline4'><span class='__number' data-counting='true'>63</span></strong>개",
+		en : "<strong class='__headline4'><span class='__number' data-counting='true'>63</span></strong>"
+	},
+	'content-19-counting-05':{
+		ko : "<strong class='__headline4'><span class='__number' data-counting='true'>20</span></strong>개",
+		en : "<strong class='__headline4'><span class='__number' data-counting='true'>20</span></strong>"
+	},
+	'content-20': {
+		ko: '건설부문 글로벌네트워크',
+		en: 'E&C Global Network',
+	},
+	'content-21': {
+		ko: '상사부문 글로벌네트워크',
+		en: 'T&I Global Network',
+	},
+	'content-22': {
+		ko: '패션부문 글로벌네트워크',
+		en: 'Fashion Global Network',
+	},
+	// TODO : 영문 필요
+	'content-23': {
+		ko: '* 지도 기준 : 부문별 지역 총괄 및 주요 거점',
+		en: '.',
+	},
+	'content-24': {
+		ko: 'IR일정 & 발표자료',
+		en: 'IR Events & Earnings Release',
+	},
+	'content-25': {
+		ko: '공시정보',
+		en: 'Public Disclosure',
+	},
+	'content-26': {
+		ko: '재무정보',
+		en: 'Financial Information',
+	},
+
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rolling Phone</title>
+  <style>
+    html,body{
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    body{
+      background-image: linear-gradient(to bottom, #fff 20%, rgba(30, 255, 0, 0.479) 40%, #fff);
+      overflow: hidden;
+    }
+
+    /* 폰박스 */
+    .phone{
+      position: absolute;
+      top: calc(50% - 200px);
+      left: calc(50% - 100px);
+      /* 중앙이동계산!
+      calc(50% - 크기절반) */
+      width: 200px;
+      height: 400px;
+      outline: 2px solid black;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- 폰박스 -->
+  <div class="phone">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  
+  
+</body>
+</html>

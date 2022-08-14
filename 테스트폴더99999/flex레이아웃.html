@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<style>
+
+html, body, h1, ul, li{
+  margin: 0;
+  padding: 0;
+  
+}
+
+
+
+body {
+  background-color: gray;
+}
+
+body *{
+  border: 1px solid black;
+}
+
+.flex{
+  display: flex;
+  margin: 20px;
+  width: 1200px;
+  height: 300px;
+  margin: 0 auto;
+  align-items: baseline;
+  
+  
+}
+
+.item{
+  list-style: none;
+  flex-grow: 0;
+  flex-shrink: 0;
+  
+}
+
+.flex li:first-child{
+  /* align-self: start; */
+}
+
+  
+</style>
+<body>
+  <div>
+    <ul class="flex">
+      <li class="item">1</li>
+      <li class="item">2</li>
+      <li class="item">3</li>
+    </ul>
+  </div>
+
+</body>
+</html>

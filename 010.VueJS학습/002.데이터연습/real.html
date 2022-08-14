@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue JS 데이터 바인딩 연습2</title>
+    <!-- 뷰JS 프레임워크 스텐드얼론 버전 가져오기 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- 엑시오스 라이브러리 스텐드얼론 버전 가져오기(제이슨불러오기) -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
+    <script>
+        //////////// 로딩구역 /////////////////////
+        window.addEventListener("DOMContentLoaded", () => {
+
+            console.log("로딩완료");
+
+            //// 데이터 바인딩 Vue 인스턴스 생성하기 ///
+            new Vue({
+                el: "#app",
+                data: {
+                    vals: {}
+                    // 제이슨 데이터가 객체임!
+                }, //////////data/////////////
+                mounted: function () {
+                    axios.get('real.json')
+                        .then(x => this.vals = x)
+
+                } //////////mounted///////////////////
+            }); /////////////////Vue////////////////////
+
+
+
+        }); ///////////// 로딩구역 ////////////////////////
+        //////////////////////////////////////////////////
+    </script>
+
+
+</head>
+
+<body>
+    <h1>Vue JS 데이터 바인딩 연습</h1>
+    <ul id="app">
+        <!-- <li v-for="(v,i) in vals.data"> -->
+            <!-- v-if로 특정조건만 나오게 할 수 있다! -->
+        <li v-for="(v,i) in vals.data" v-if="i==='living'">
+            <!-- i==="living"은 속성명이 "living"인 것만! -->
+            
+            <h2>{{v.제목}}</h2>
+            <!-- 속성명은 문자형이지만 아래 두 가지방법으로 사용가능함 -->
+            <!-- <h2>{{v.제목}}</h2>  방법1-->
+            <!-- <h2>{{v["제목"]}}</h2>  방법2-->
+            
+            <!-- 메뉴의 값이 "없음" -->
+            <ol v-if="v.메뉴!=='없음'">
+                <li v-for="(v2,i2) in v.메뉴">
+                    {{v2}}
+                </li>
+            </ol>
+
+            <!-- v-for에서 데이터값이 배열이 아니고
+            문자면 글자를 하나씩 잘라서 돔(for of와 비슷) -->
+
+            <!--
+                    [v-for 디렉티브]
+
+                    -> 데이터 for문을 돌려주는 속성
+
+                    1. 배열일때 
+                    (값,순번) in 변수.data
+
+                    2. 객체일때
+                    (값,속성명) in 변수.data
+
+                    [v-if 디렉티브]
+                    - 조건으로 출력여부 결정하는 속성
+                    -> v-if 풀셋팅!
+                    v-if="조건"
+                    v-else-if="조건"
+                    v-else
+
+                    _______________________________
+                    예)
+                    <div v-if="v.num===3"> 출력1 </div>
+                    <div v-else-if="v.num===4"> 출력2 </div>
+                    <div v-else> 출력3 </div>
+
+
+             -->
+            
+        </li>
+    </ul>
+</body>
+
+</html>

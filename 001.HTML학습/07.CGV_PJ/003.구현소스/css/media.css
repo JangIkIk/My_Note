@@ -1,0 +1,135 @@
+@charset "utf-8";
+/*  CGV PJ 미디어 쿼리*/
+
+
+/********** 미디어쿼리 1335px 이하  시작**********/
+@media screen and (max-width:1335px) {
+    /* GNB메뉴 */
+    .gnb{
+      right: 70px;
+    }
+  
+}/********** 미디어쿼리 1335px 이하  끝**********/
+
+
+
+/********** 미디어쿼리 1030px 이하  시작**********/
+@media screen and (max-width: 1030px) {
+      /* gnb 메뉴리스트 */
+      .glist{
+        position: absolute;
+        top: 12px;
+        right: -68px;
+        flex-direction: column;
+        white-space: nowrap;
+        text-align: right;
+        /* 처음에숨기기 */
+        display: none;
+      }
+
+     
+      /* 상위메뉴 마우스 오버시 서브메뉴 숨기기 */
+      .glist>li:hover .smenu{
+        display: none;
+      }
+
+       /* gnb 박스에 오버시 메뉴 리스트 보이기 */
+       .gnb:hover .glist{
+        display: block;
+      }
+  
+}/********** 미디어쿼리: 1030px 이하  끝**********/
+
+
+
+/********** 미디어쿼리 780px 이하  시작**********/
+@media screen and (max-width:780px) {
+    /* 하단영역 */
+    .info{
+      height: auto;
+    }
+
+    /* 주소박스 */
+    .info address{
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* 하단로고 이미지 */
+    .info img{
+      float:none;
+      margin: 0;
+      margin-bottom: 15px;
+    }
+
+    /* 주소박스 */
+    .info span{
+      display: block;
+    }
+
+    .sns {
+      position: static;
+      justify-content: center;
+    }
+    
+    /* 영화정보박스 */
+.movtxt{
+  font-size: 4vw;
+  line-height: 1.5;
+ }
+ /* 첫번째 li 영화제목 */
+ .movtxt li:first-child{
+ font-size: 7vw;
+ }
+  
+}/********** 미디어쿼리 780px 이하  끝**********/
+
+
+
+
+
+/********** 미디어쿼리 600px 이하  시작**********/
+@media screen and (max-width:600px) {
+    /* 메인영역 비율변경 */
+  .cont::before {
+    
+    padding-top: 150.66%;
+}
+
+  /* 메인 배경이미지 크기조정 */
+.cont {
+  background-size: 130%;
+}
+
+/* 극장가는길 없애기 */
+
+.goMV{
+  display: none;
+}
+
+/* 스크린 위치, 크기조정 */
+#screen {
+  top: 9.2%;
+  left: 12.4%;
+  width: 76.5%;
+  height: 29.5%;
+}
+
+.mlist ul{
+  flex-wrap: wrap;
+}
+
+.mlist>ul>li{
+  flex-basis: 29.33%;
+}
+
+
+.mlist {
+  width: 90%;
+  bottom: 3%;
+}
+
+
+
+  
+}/********** 미디어쿼리 600px 이하  끝**********/

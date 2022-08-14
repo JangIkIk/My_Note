@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roling cube 3D</title>
+  <style>
+    html,body{
+      margin: 0;
+      padding: 0;
+      /* 100vh를 하지않아도 보이는 화면을 채운다 
+      여기서만 먹힘 */
+      height: 100%;
+    }
+    /* 전체배경 */
+    body{
+      background-image: linear-gradient(
+        to bottom, #777 30%, #ccc 70%
+      );
+    }
+    /* 큐브 */
+    .cube{
+      position: absolute;
+      top: calc(50% - 150px);
+      left: calc(50% - 150px);
+      width: 300px;
+      height: 300px;
+
+      /* 
+          [입체로 설정하기]
+          - 입체로 설정할 요소의 부모박스에 아래와 같이
+          설정한다!
+
+          transform-style: preserve-3d;
+          - 기본값 flat, 즉 2D
+          -preserve 는 3D 전환설정!
+      */
+      transform-style: preserve-3d;
+      
+      /* 입체를 잘보이게 x,y축으로 약간 회전하기 */
+      transform: rotateX(10deg) rotatey(30deg);
+    }
+    /* 큐브각면 공통 */
+    .cube span{
+      /* 부모는 .cube */
+      position: absolute;
+      /* 앱솔루트 , span도 자동 block! */
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      outline: 2px solid #000;
+    }
+
+    /* 1.앞면 */
+    .cube span:nth-child(1){
+      background: url(./images/newyorkCity.jpg)
+      /* 반복안함 사진오른쪽으로 가로auto x 세로105% */
+      no-repeat right/auto 105%;
+      /* 화면방향(z축) */
+      transform: translatez(150px);
+
+    }
+    /* 2.오른쪽면 */
+    .cube span:nth-child(2){
+      background: url(./images/seoulCity.jpg)
+      /* 반복안함 사진오른쪽으로 가로auto x 세로105% */
+      no-repeat center/cover;
+      /* 화면방향(z축) */
+      /* transform: translatez(150px) rotatey(90deg); 
+      배정위치에따라 사진위치도틀림*/
+      transform: rotatey(90deg) translatez(150px) ;
+
+    }
+    /* 3.뒷면 */
+    .cube span:nth-child(3){
+      background: url(./images/parisCity.jpg)
+      /* 반복안함 사진오른쪽으로 가로auto x 세로105% */
+      no-repeat center/cover;
+      /* 화면방향(z축) */
+      /* transform: translatez(150px) rotatey(90deg); 
+      배정위치에따라 사진위치도틀림*/
+      transform: rotatey(180deg) translatez(150px) ;
+
+    }
+    /* 4. 왼쪽면 */
+    .cube span:nth-child(4){
+      background: url(./images/cityMain.jpg)
+      /* 반복안함 사진오른쪽으로 가로auto x 세로105% */
+      no-repeat center/cover;
+      /* 화면방향(z축) */
+      /* transform: translatez(150px) rotatey(90deg); 
+      배정위치에따라 사진위치도틀림*/
+      transform: rotatey(-90deg) translatez(150px) ;
+
+    }
+    /* 5. 윗면 */
+    .cube span:nth-child(5){
+      background: url(./images/citys.jpg)
+      /* 반복안함 사진오른쪽으로 가로auto x 세로105% */
+      no-repeat center/cover;
+      /* 화면방향(z축) */
+      /* transform: translatez(150px) rotatey(90deg); 
+      배정위치에따라 사진위치도틀림*/
+      transform: rotatex(90deg) translatez(150px) ;
+
+    }
+    /* 5. 아랫면 */
+    .cube span:nth-child(6){
+      background: url(../Test_imags/나무병우너.jpg)
+      /* 반복안함 사진오른쪽으로 가로auto x 세로105% */
+      no-repeat center/cover;
+      /* 화면방향(z축) */
+      /* transform: translatez(150px) rotatey(90deg); 
+      배정위치에따라 사진위치도틀림*/
+      transform: rotatex(-90deg) translatez(150px) ;
+
+    }
+
+    /* 애니메이션 클래스 */
+    .cube-ani{
+        /* 애니메이션: 이시이지반방마 */
+        animation: cubeAni 4s linear infinite;
+        /* 처음에 멈춰있기! */
+        animation-play-state: paused;
+    }
+
+    .cube-ani.on{
+          /* 돌아라! */
+        animation-play-state: running;
+    }
+
+    /* 회전키프레임 */
+    @keyframes cubeAni{
+      to{
+        transform: rotateX(370deg) rotateY(-330deg);
+        /* 
+          기존박스의 x,y축 기본값 으로인한 끊김현상을
+          애니메이션에서 계산후에 넣어줘야 끊김이없다
+
+          x축 양의 방향으로 10도에서 출발
+          양의 방향 360도 + 10도 = 370도
+          음의 방향 -360도 + 10도 = -350도
+
+          y축 양의 방향으로 30도에서 출발
+          양의 방향 360도 + 30도 = 390도
+          음의 방향 -360도 + 30도 = -330도
+
+          ->rotateZ() - Z축회전도 가능함!
+        */
+      }
+    }/* 키프레임 */
+      /* 버튼박스 */
+      .btns{
+        text-align: center;
+        padding: 50px;
+      }
+
+      .btns button{
+        font-size: 40px;
+        border-radius: 10px;
+      }
+
+  </style>
+  <script>
+    /***************************************************************************** 
+      함수명 : goR
+      기능 : 큐브 시작/정지
+    *****************************************************************************/
+   function goR(){
+      //1. 호출 확인
+      console.log("정상호출");
+      //2. 대상선정: 큐브 - .cube / 버튼 - .btns button
+      var cube = document.querySelector(".cube");
+      var btns = document.querySelector(".btns button");
+
+      //3. 클래스 넣기/빼기
+      // 클래스를 제어 내장객체
+      // classList
+      // 이 객체가 메서드 가짐
+      // (1)add(클래스명)
+      // (2)remove(클래스명)
+      // (3)toggle(클래스명) -> 유무에 따라
+      // (4)contains(클래스명) -> 있으면 true
+      cube.classList.toggle("on");
+      // console.log(cube.classList.toggle("on"));
+
+      // sts는 클래스 유무여부를 담는 변수
+      var sts = cube.classList.contains("on");
+
+      console.log("on있니?", sts);
+
+      // 조건연산자(비?집:놀이동산)
+      // sts? sts="정지!" : sts="시작";
+      // true / false 가 나오는 sts변수에 값을 담음!
+
+      //  버튼 글자 바꾸기!
+      // btns.innerText="sts"; 
+
+      btns.innerText= sts? "정지!" : "시작!";
+      // 더많이 쓰는식임
+      // 이퀄 오른쪽의 조건연산자가 값을 결정하여
+      // 왼쪽으로 할당되게 한다!
+
+   }//////////////////////goR 함수 /////////////////////////////////////////
+
+
+   /* 
+      function goR(){
+      console.log("정상호출");
+  
+      var cube = document.querySelector(".cube");
+      변수에 돔선택자로 cube클래스에 접근
+
+      var btns = document.querySelector(".btns button");
+      변수에 돔선택자로 btns 클래스 안에있는 button에 접근
+
+      cube.classList.toggle("on");
+      큐브 클래스에 on클래스를 넣었다 빼기
+
+      var sts = cube.classList.contains("on");
+     sts 변수에 cube변수 안에 on클래스가 있는지 없는지 유/무 판단
+
+      console.log("on있니?", sts);
+
+      btns.innerText= sts? "정지!" : "시작!";
+      sts가 true면 정지 펄스면 시작을 넣어줌
+  
+   }
+ */
+  </script>
+</head>
+<body>
+  <!-- 버튼박스 -->
+  <div class="btns">
+    <button onclick="goR()">시작!</button>
+  </div>
+
+  <!-- 큐브 -->
+  <div class="cube cube-ani">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  
+</body>
+</html>

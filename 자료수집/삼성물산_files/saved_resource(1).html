@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0100)https://asia.tools.euroland.com/tools/ticker/scrolling/?companycode=kr-028260&v=newticker&lang=ko-kr -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="Chrome"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,10,11">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    
+    <title>Scrolling Ticker</title>
+
+    <style rel="stylesheet" type="text/css">
+        body {
+            background-color: transparent;
+        }
+    </style>
+
+    <script async="" src="./analytics.js.다운로드"></script><script type="text/javascript" src="./EurolandToolAutoSizeObject.js.다운로드"></script>
+
+    <script type="text/javascript">
+        var True = true, False = false;
+    </script>
+
+    
+
+
+    <script src="./static.js.다운로드"></script>
+
+    
+    <script type="text/javascript">
+
+        ScrollingTickerInstrumentObject.prototype.allowsBreaks = true;
+        ScrollingTickerInstrumentObject.prototype.isDomSpan = false;
+
+        var scroller;
+                
+        function load() {
+            scroller = new ScrollingTickerStaticObject();
+            document.body.appendChild(scroller.dom);
+            
+            scroller.InstrumentsSettings.push({"timeZone":"Korea Standard Time","winterTimeMarker":"","summerTimeMarker":"","instrumentID":108328,"activationInstrumentID":0,"activationDateTimestamp":0,"name":"028260","isArabic":false,"containerTag":"","isExtended":false,"isEOD":false,"isEODDelayed":true,"Layout":[{"Children":[{"Children":[{"Children":[{"value":"주가정보","tag":"text","className":"","hasSpace":true}],"tag":"SPAN","className":"sq","hasSpace":true},{"Children":[{"value":" | ","tag":"text","className":"","hasSpace":true}],"tag":"SPAN","className":"separator","hasSpace":true},{"value":"삼성물산","tag":"text","className":"","hasSpace":true},{"Children":[{"value":" (028260) ","tag":"text","className":"","hasSpace":true}],"tag":"SPAN","className":"","hasSpace":true}],"tag":"DIV","className":"container1","hasSpace":true},{"Children":[{"Children":[{"Children":[{"value":"last","format":"0_#,##0","divider":1.0,"tag":"value","className":"value","hasSpace":true}],"tag":"SPAN","className":"","hasSpace":true}],"tag":"DIV","className":"contleft","hasSpace":true},{"Children":[{"Children":[{"value":"change","format":"0_#,##0;#,##0;0","divider":1.0,"tag":"value","className":"change [change]","hasSpace":true}],"tag":"SPAN","className":"","hasSpace":true},{"Children":[{"value":"changePer","format":"0_+#,##0.00\\%;-#,##0.00\\%;0.00\\%","divider":1.0,"tag":"value","className":"","hasSpace":true}],"tag":"SPAN","className":"","hasSpace":true}],"tag":"DIV","className":"contright","hasSpace":true}],"tag":"DIV","className":"container2","hasSpace":true}],"tag":"DIV","className":"overallcontainer","hasSpace":true}]});
+
+            scroller.load();
+            EurolandToolAutoSizeObject.load(scroller.dom);
+
+        }
+    </script>
+
+    <script type="text/javascript">
+
+
+        function getApplicationBase()
+        {
+            var path = location.href;
+            path = path.substring(0, path.indexOf(location.search));
+
+            if(path.length > 0)
+            {
+                switch(String.fromCharCode(path.charCodeAt(path.length - 1)))
+                {
+                    case '\\':
+                    case '/':
+                        break;
+                    default:
+                        path += "/";
+                        break;
+                }
+            }
+            path += "../";
+            return path;
+        }
+        var strApplicationBase = getApplicationBase();
+
+        ScrollingTickerInstrumentObject.prototype.lang = "ko-KR";
+        ScrollingTickerInstrumentObject.prototype.decimalMarket = ".";
+        ScrollingTickerInstrumentObject.prototype.thousandGroupMarker = ",";
+        ScrollingTickerInstrumentObject.prototype.numberFormat = "#,##0.00";
+        ScrollingTickerInstrumentObject.prototype.dataURI = "/tools/ticker/Scrolling/GetInstrumentData/";
+        ScrollingTickerInstrumentObject.prototype.isAzure = false;
+        ScrollingTickerInstrumentObject.prototype.errorLogUri = "/tools/ticker/DataRetriver/addErrorToEventlog/";
+        ScrollingTickerInstrumentObject.prototype.appBaseLocation = strApplicationBase;
+        ScrollingTickerInstrumentObject.prototype.allowsGraph = False;
+
+        ScrollingTickerInstrumentObject.prototype.companyCode = "kr-028260";
+        ScrollingTickerInstrumentObject.prototype.version = "newticker";
+
+        Page.DomainData.dataRetriverUrl = "/tools/ticker/DataRetriver/";
+
+        CurrencyRateObject.prototype.Settings = {
+            lang: 'ko-KR',
+            decimalMarket: '.',
+            thousandGroupMarker: ',',
+            updateInterval: 3600000,
+            dataURL: "/tools/ticker/html/GetCurrencyRate/"
+        };
+
+    </script>
+
+
+
+
+    <script type="text/javascript">
+
+            document.cssBodyVisibility = '';
+            (function () {
+                /*
+                Because the BASE tag requires the full URL and not a relative URI,
+                this script is required in order to keep any domain name from entering into the HTML output.
+                */
+                var link = "Solutions/ScrollingTicker/kr-028260/",
+                    dom = document.createElement('base'),
+                    head = document.getElementsByTagName('head')[0],
+                    url = "style_newticker.css";
+
+                switch (link.substr(0, 5).toLowerCase()) {
+                    case 'http:':
+                    case 'https':
+                        break;
+                    default:
+                        link = strApplicationBase + link;
+                        break;
+                }
+
+                dom.setAttribute("href", link);
+
+                head.appendChild(dom);
+                /*
+                LazyLoader([url], function () {
+                document.cssBodyVisibility = 'visible';
+                if (document.body)
+                document.body.style.visibility = document.cssBodyVisibility;
+                });
+                */
+
+                link = document.createElement('link');
+                link.setAttribute('href', url);
+                link.setAttribute('rel', 'stylesheet');
+                link.setAttribute('type', 'text/css');
+
+                if (typeof document.createStyleSheet == 'function')
+                    document.createStyleSheet(url);
+
+                head.appendChild(link);
+
+                Page.getData(url, null, function () {
+
+                    document.cssBodyVisibility = 'visible';
+                    if (document.body)
+                        document.body.style.visibility = document.cssBodyVisibility;
+
+                }, null, null, 5, function (http) {
+
+                    document.cssBodyVisibility = 'visible';
+                    if (document.body)
+                        document.body.style.visibility = document.cssBodyVisibility;
+
+                }, true);
+
+            })();
+
+            function sysLoad() {
+                if (document.cssBodyVisibility.length)
+                    document.body.style.visibility = document.cssBodyVisibility;
+                document.body.style.height = '100%';
+            }
+
+    </script><!--<base href="https://asia.tools.euroland.com/tools/ticker/scrolling/../Solutions/ScrollingTicker/kr-028260/">--><base href="."><link href="./style_newticker.css" rel="stylesheet" type="text/css">
+
+    
+
+    <script type="text/javascript" src="./google-analytics.js.다운로드"></script>
+
+
+</head>
+<body style="visibility: visible; height: 100%;" class="ko-KR" onload="sysLoad(); Page.load(); load();">
+
+
+<div><div class="instrument instrument_108328"><div class="overallcontainer"><div class="container1"><span class="sq">주가정보 </span><span class="separator"> |  </span>삼성물산 <span> (028260)  </span></div><div class="container2"><div class="contleft"><span><span class="last value">123,500</span> </span></div><div class="contright"><span><span class="change positive">500</span> </span><span><span class="changePer positive positive_changePer">+0.41%</span> </span></div></div></div></div></div></body></html>
