@@ -4,56 +4,108 @@
   <meta charset="UTF-8">
   <title>Document</title>
 </head>
+
 <style>
 
-html, body, h1, ul, li{
+html, body{
   margin: 0;
   padding: 0;
-  
-}
 
-
-
-body {
-  background-color: gray;
 }
 
 body *{
-  border: 1px solid black;
+  outline: 1px dotted rgba(255, 0, 0, 0.489);
 }
 
-.flex{
-  display: flex;
-  margin: 20px;
+body{
+  background-color: gray;
+}
+
+.grid{
   width: 1200px;
-  height: 300px;
+  display: grid;
+  font-size: 50px;
+  text-align: center;
   margin: 0 auto;
-  align-items: baseline;
-  
-  
+  margin-top: 10px;
 }
 
-.item{
-  list-style: none;
-  flex-grow: 0;
-  flex-shrink: 0;
-  
+.top{
+  background-color: rgb(147, 240, 128);
+}
+.main{
+  background-color: rgb(182, 173, 230);
+}
+.footer{
+  background-color: rgb(202, 35, 35);
 }
 
-.flex li:first-child{
-  /* align-self: start; */
-}
 
-  
+
+
+
+
+
+
+
+
 </style>
+
 <body>
-  <div>
-    <ul class="flex">
-      <li class="item">1</li>
-      <li class="item">2</li>
-      <li class="item">3</li>
-    </ul>
+  <div class="grid">
+    <div class="top">top</div>
+    <div class="main">main</div>
+    <div class="footer">footer</div>
   </div>
 
+
+
+     <!-- 그리드 컨테이너 (Grid Container) -->
+    
+    <!-- 그리드 아이템 (Grid Item) -->
+  <!--  
+    
+그리드 컨테이너 (Grid Container)
+display : grid
+display : inline - grid
+
+grid-template-rows : 세로
+grid-template-columns : 가로
+단위는 nfr, px , repeat ,rem em 등등
+*repeat : (개수, 간격단위 )
+*minmax(최소값, 최대값) : 예) 100px , auto
+
+
+*grid-template-columns: repeat(auto-fill, minmax(20%, auto))
+개수를 정하지않고 혀용하는 한 최대한 셀을 채운다. 9개일경우 20%로씩 한줄은
+5개를 채우고 한줄은 4개 auto-fit을 사용하면 남은 공간을 채운다?(한줄은 채우는데 두줄은 ?)
+
+
+
+
+
+
+그리드 아이템 (Grid Item)
+Grid 컨테이너의 자식 요소들입니다. 바로 이 아이템들이 Grid 규칙에 의해 배치되는 거예요. 위 코드에서 <div class=”item”></div>들이 Grid 아이템입니다.
+그리드 트랙 (Grid Track)
+Grid의 행(Row) 또는 열(Column)
+그리드 셀 (Grid Cell)
+Grid의 한 칸을 가리키는 말이에요. <div>같은 실제 html 요소는 그리드 아이템이고, 이런 Grid 아이템 하나가 들어가는 “가상의 칸(틀)”이라고 생각하면 됩니다.
+그리드 라인(Grid Line)
+Grid 셀을 구분하는 선입니다.
+그리드 번호(Grid Number)
+Grid 라인의 각 번호입니다.
+그리드 갭(Grid Gap)
+Grid 셀 사이의 간격입니다.
+그리드 영역(Grid Area)
+Grid 라인으로 둘러싸인 사각형 영역으로, 그리드 셀의 집합이에요.
+Grid의 속성들은 Flex와 마찬가지로,
+
+컨테이너에 적용하는 속성
+아이템에 적용하는 속성
+이렇게 두 가지로 나뉘어요.
+  -->
+  
+  
 </body>
 </html>
