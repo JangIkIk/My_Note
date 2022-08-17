@@ -23,23 +23,89 @@ body{
 
 .grid{
   width: 1200px;
-  display: grid;
   font-size: 50px;
   text-align: center;
   margin: 0 auto;
   margin-top: 10px;
+  /* grid-template-columns: repeat(2, 200px); */
+  /* grid-auto-columns: 1fr 2fr 1fr 1fr; */
+  /* grid-auto-columns: 1fr 1fr; */
+  /* grid-template-columns: repeat(auto-fit, minmax(20%, auto)); */
+  /* grid-template-rows: 1fr; */
+  /* grid-auto-rows: 150px; */
+  /* grid-template-rows: repeat(auto-fit, minmax(auto, auto)); */
+  
+  /* column-gap: 10px; */
+  /* row-gap: 10px; */
+}
+
+
+
+
+/* .con {
+  display: grid;
+  grid-template-rows: repeat(4, 100px);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "top top top"
+    "main . ."
+    "main . side"
+    "footer footer footer";
+}
+.top { grid-area: top; }
+.main   { grid-area: main;   }
+.side  { grid-area: side;  }
+.footer { grid-area: footer; } */
+
+.con{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(25%, auto));
+  grid-template:
+  /* grid-auto-columns: repeat(auto-fill,minmax(25%, auto)); */
+  /* grid-auto-columns: minmax(100px, 100px); */
+  /* grid-template-columns: 100px;
+  grid-auto-columns : 1fr 2fr; */
+  /* grid-template-columns: 25% 25%; */
+  /* grid-auto-rows: minmax(200px, auto); */
+  /* grid-template-areas: 
+  "top top sideb "
+  "sidea main  sideb"
+  "footer footer footer";
+   */
+   /* grid-auto-flow: row dense; */
+
 }
 
 .top{
   background-color: rgb(147, 240, 128);
-}
-.main{
-  background-color: rgb(182, 173, 230);
-}
-.footer{
-  background-color: rgb(202, 35, 35);
+  /* grid-column: 2/3; */
+  /* grid-area: top; */
 }
 
+.main{
+  background-color: rgb(182, 173, 230);
+  /* grid-column: 2/4; */
+  /* grid-area: main; */
+  /* grid-column: 2/4; */
+  grid-column: 2/4;
+}
+
+
+.footer{
+  background-color: rgb(202, 35, 35);
+  /* grid-area: footer; */
+  grid-column: 1/4;
+}
+
+.sidea{
+  background-color: bisque;
+  /* grid-area: sidea; */
+  /* grid-column: 1/2; */
+}
+.sideb{
+  background-color: bisque;
+  /* grid-area: sideb; */
+}
 
 
 
@@ -53,9 +119,13 @@ body{
 
 <body>
   <div class="grid">
-    <div class="top">top</div>
-    <div class="main">main</div>
-    <div class="footer">footer</div>
+    <div class="con">
+      <div class="top">top</div>
+      <div class="main">main</div>
+      <div class="footer">footer</div>
+      <div class="sidea">sidea</div>
+      <div class="sideb">sideb</div>
+    </div class="con">
   </div>
 
 
