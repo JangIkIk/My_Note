@@ -1,181 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>김코딩네 농장 주스</title>
 </head>
-
 <style>
+  html, body, div{
+    margin: 0;
+    padding: 0;
+  }
 
-html, body{
-  margin: 0;
-  padding: 0;
+  body{
+    background-color: gray;
+  }
 
-}
+  body *{
+    outline: 1px solid red;
+  }
 
-body *{
-  outline: 1px dotted rgba(255, 0, 0, 0.489);
-}
+  h1{
+    width: 1200px;
+    padding-top: 50px;
+    margin: 0 auto;
+    text-align: center;
+  }
 
-body{
-  background-color: gray;
-}
+  .mid{
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-auto-rows: minmax(200px, auto);
+    justify-content: center;
+    grid-gap: 50px;
+    text-align: center;
+    line-height: 180px;
+  }
 
-.grid{
-  width: 1200px;
-  font-size: 50px;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 10px;
-  /* grid-template-columns: repeat(2, 200px); */
-  /* grid-auto-columns: 1fr 2fr 1fr 1fr; */
-  /* grid-auto-columns: 1fr 1fr; */
-  /* grid-template-columns: repeat(auto-fit, minmax(20%, auto)); */
-  /* grid-template-rows: 1fr; */
-  /* grid-auto-rows: 150px; */
-  /* grid-template-rows: repeat(auto-fit, minmax(auto, auto)); */
+  .mid > div:last-child{
+    grid-column: 1/4;
+  }
+
+
+  .menu{
+    width: 200px;
+    height: 200px;
+    border: 10px solid black;
+    box-sizing: border-box;
+  }
   
-  /* column-gap: 10px; */
-  /* row-gap: 10px; */
-}
+  .menu img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 
 
 
+  
 
-/* .con {
-  display: grid;
-  grid-template-rows: repeat(4, 100px);
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas:
-    "top top top"
-    "main . ."
-    "main . side"
-    "footer footer footer";
-}
-.top { grid-area: top; }
-.main   { grid-area: main;   }
-.side  { grid-area: side;  }
-.footer { grid-area: footer; } */
-
-.con{
-  display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(25%, auto));
-  grid-template:
-  /* grid-auto-columns: repeat(auto-fill,minmax(25%, auto)); */
-  /* grid-auto-columns: minmax(100px, 100px); */
-  /* grid-template-columns: 100px;
-  grid-auto-columns : 1fr 2fr; */
-  /* grid-template-columns: 25% 25%; */
-  /* grid-auto-rows: minmax(200px, auto); */
-  /* grid-template-areas: 
-  "top top sideb "
-  "sidea main  sideb"
-  "footer footer footer";
-   */
-   /* grid-auto-flow: row dense; */
-
-}
-
-.top{
-  background-color: rgb(147, 240, 128);
-  /* grid-column: 2/3; */
-  /* grid-area: top; */
-}
-
-.main{
-  background-color: rgb(182, 173, 230);
-  /* grid-column: 2/4; */
-  /* grid-area: main; */
-  /* grid-column: 2/4; */
-  grid-column: 2/4;
-}
-
-
-.footer{
-  background-color: rgb(202, 35, 35);
-  /* grid-area: footer; */
-  grid-column: 1/4;
-}
-
-.sidea{
-  background-color: bisque;
-  /* grid-area: sidea; */
-  /* grid-column: 1/2; */
-}
-.sideb{
-  background-color: bisque;
-  /* grid-area: sideb; */
-}
-
-
-
-
-
-
-
-
-
+  
 </style>
-
 <body>
-  <div class="grid">
-    <div class="con">
-      <div class="top">top</div>
-      <div class="main">main</div>
-      <div class="footer">footer</div>
-      <div class="sidea">sidea</div>
-      <div class="sideb">sideb</div>
-    </div class="con">
-  </div>
+    <header>
+      <h1>김코딩네 농장 주스</h1>
+    </header>
 
+  <main class="mid">
+    <div class="menu">
+      <!-- <img src="../마지막프로젝트08.10/프로젝트이미지/test1.png" alt="#"> -->
+      <a href="">토마토 주스</a>
+    </div>
+    <div class="menu">
+      <img src="" alt="">
+      <a href="">당근 주스</a>
+    </div>
+    <div class="menu">
+      <img src="" alt="">
+      <a href="">딸기 주스</a>
+    </div>
+    <div class="menu">
+      <img src="" alt="">
+      <a href="">바나나 주스</a>
+    </div>
+    <div class="menu">
+      <img src="" alt="">
+      <a href="">키위 주스</a>
+    </div>
+    <div class="menu">
+      <img src="" alt="">
+      <a href="">딸기 스무디</a>
+    </div>
+    <div class="menu">
+      <img src="" alt="">
+      <a href="">바나나 스무디</a>
+    </div>
+    <div class="menu">
+      <img src="" alt="">
+      <a href="">키위 스무디</a>
+    </div>
+    <div class="menu">
+      <img src="" alt="">
+      <a href="">멋쟁이 토마토</a>
+    </div>
+    <div class="menu">
+      <div>
 
-
-     <!-- 그리드 컨테이너 (Grid Container) -->
-    
-    <!-- 그리드 아이템 (Grid Item) -->
-  <!--  
-    
-그리드 컨테이너 (Grid Container)
-display : grid
-display : inline - grid
-
-grid-template-rows : 세로
-grid-template-columns : 가로
-단위는 nfr, px , repeat ,rem em 등등
-*repeat : (개수, 간격단위 )
-*minmax(최소값, 최대값) : 예) 100px , auto
-
-
-*grid-template-columns: repeat(auto-fill, minmax(20%, auto))
-개수를 정하지않고 혀용하는 한 최대한 셀을 채운다. 9개일경우 20%로씩 한줄은
-5개를 채우고 한줄은 4개 auto-fit을 사용하면 남은 공간을 채운다?(한줄은 채우는데 두줄은 ?)
-
-
-
-
-
-
-그리드 아이템 (Grid Item)
-Grid 컨테이너의 자식 요소들입니다. 바로 이 아이템들이 Grid 규칙에 의해 배치되는 거예요. 위 코드에서 <div class=”item”></div>들이 Grid 아이템입니다.
-그리드 트랙 (Grid Track)
-Grid의 행(Row) 또는 열(Column)
-그리드 셀 (Grid Cell)
-Grid의 한 칸을 가리키는 말이에요. <div>같은 실제 html 요소는 그리드 아이템이고, 이런 Grid 아이템 하나가 들어가는 “가상의 칸(틀)”이라고 생각하면 됩니다.
-그리드 라인(Grid Line)
-Grid 셀을 구분하는 선입니다.
-그리드 번호(Grid Number)
-Grid 라인의 각 번호입니다.
-그리드 갭(Grid Gap)
-Grid 셀 사이의 간격입니다.
-그리드 영역(Grid Area)
-Grid 라인으로 둘러싸인 사각형 영역으로, 그리드 셀의 집합이에요.
-Grid의 속성들은 Flex와 마찬가지로,
-
-컨테이너에 적용하는 속성
-아이템에 적용하는 속성
-이렇게 두 가지로 나뉘어요.
-  -->
-  
+      </div>
+      <div>
+        <input type="text">
+      </div>
+    </div>
+  </main>
   
 </body>
 </html>
