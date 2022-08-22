@@ -1,9 +1,9 @@
 
 
-let isRight = false;
-let a = 5;
+function Test(parameter){
 
+    return Number(parameter);
+}
 
-let seqN = a[isRight ? 1 : 0];
+console.log(typeof Test(1));
 
-console.log(seqN);
