@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    /* 리셋 */
+    body,html,ol,li,ul,div,button{
+        margin: 0;
+        padding: 0;
+
+    }
+
+
+
+    li{
+        list-style: none;
+    }
+
+    /*****************************/
+
+    body{
+        background-color: black;
+        height: 100vh;
+    }
+
+    body *{
+        /* outline: 1px solid red; */
+    }
+
+
+
+
+
+    #main{
+        /* 부모박스 가운데 오도록 설정 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: white;
+        
+    }
+
+    .All{
+        border: 5px solid darkgray;
+    }
+
+    .bts{
+        font-size: 12px;
+        flex: 1;
+        /* width: 20px; */
+        background-color: darkgray;
+        border-radius: 5px;
+        color: white;
+        border: none;
+        margin: 2px;
+        padding: 2px 0;
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    .menu1-1{
+        background-color: black;
+        margin: 0 auto;
+    }
+
+
+
+    .m_flex1.menu1-1 input{
+        color: aliceblue;
+        background-color: black;
+        border: none;
+        height: 40px;
+        text-align: right;
+        width: 90%;
+        padding: 0;
+    }
+
+    
+
+
+
+    
+    
+    .m_flex2{
+        /* 버튼부모박스들 공통 */
+        display: flex;
+        /* button태그는 인라인블럭이다 .
+        bts에 flex-grow : 1, flex-shrink : 1, flex-basis : 0
+        의 단축속성인 flex:1 을줘도 부모의 사이즈를 찾을수없기때문에 내용만큼판단하여
+        늘어나기때문에 라인이 맞지않는것!  즉 inline-block는 값을지정하지 않으면
+        inline내용만큼 값을줄경우 block이 되는 유동적인 display다!*/
+        width: 200px;
+        justify-content: space-evenly;
+    }
+    
+
+
+    .m_flex2.menu2-1 .bts{
+        background-color: rgba(94, 93, 93, 0.69);
+
+    }
+    .m_flex2.menu2-1 .bts:last-child{
+        background-color: orange;
+
+    }
+    .m_flex2.menu2-2 .bts:last-child{
+        background-color: orange;
+
+    }
+    .m_flex2.menu2-3 .bts:last-child{
+        background-color: orange;
+
+    }
+    .m_flex2.menu2-4 .bts:last-child{
+        background-color: orange;
+
+    }
+    .m_flex2.menu2-5 .bts:last-child{
+        background-color: orange;
+
+    }
+    
+    .m_flex2.menu2-5 .bts:first-child{
+        flex-grow: 2;
+    }
+    
+    
+</style>
+<body>
+    <main id="main">
+        <div class="All">
+            <div class="menu1">
+                <div class="m_flex1 menu1-1">
+                    <input type="text" value="0">
+                </div>
+            </div>
+            
+            <div class="menu2">
+                <div class="m_flex2 menu2-1">
+                    <input type="button" class="bts" value="AC"></input type="button">
+                    <input type="button" class="bts" value="+/-"></input type="button">
+                    <input type="button" class="bts" value="%"></input type="button">
+                    <input type="button" class="bts" value="÷"></input type="button">
+                </div>
+                <div class="m_flex2 menu2-2">
+                    <input type="button" class="bts" value="7"></input type="button">
+                    <input type="button" class="bts" value="8"></input type="button">
+                    <input type="button" class="bts" value="9"></input type="button">
+                    <input type="button" class="bts" value="x"></input type="button">
+                </div>
+                <div class="m_flex2 menu2-3">
+                    <input type="button" class="bts" value="4"></input type="button">
+                    <input type="button" class="bts" value="5"></input type="button">
+                    <input type="button" class="bts" value="6"></input type="button">
+                    <input type="button" class="bts" value="-"></input type="button">
+                </div>
+                <div class="m_flex2 menu2-4">
+                    <input type="button" class="bts" value="1"></input type="button">
+                    <input type="button" class="bts" value="2"></input type="button">
+                    <input type="button" class="bts" value="3"></input type="button">
+                    <input type="button" class="bts" value="+"></input type="button">
+                </div>
+                <div class="m_flex2 menu2-5">
+                    <input type="button" class="bts" value="0"></input type="button">
+                    <input type="button" class="bts" value="."></input type="button">
+                    <input type="button" class="bts" value="="></input type="button">
+                </div>
+                
+            </div>
+            
+
+        </div>
+    </main>
+    
+</body>
+</html>
