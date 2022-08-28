@@ -32,7 +32,11 @@
         /* outline: 1px solid red; */
     }
 
+    html{
+        font-size: 15px;
+    }
 
+/* --------------------------------------------- */
 
 
 
@@ -51,28 +55,20 @@
     }
 
     .bts{
-        font-size: 12px;
+        font-size: 1.2rem;
         flex: 1;
         background-color: darkgray;
-        border-radius: 5px;
+        border-radius: 0.5rem;
         color: white;
         border: none;
-        margin: 2px;
-        padding: 2px 0;
+        margin: 0.2rem;
+        padding: 0.2rem 0;
+        cursor: pointer;
         
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+   
     
     .menu1{
         background-color: black;
@@ -86,19 +82,14 @@
         color: aliceblue;
         background-color: black;
         border: none;
-        height: 40px;
+        height: 4rem;
         text-align: right;
         width: 90%;
         padding: 0;
         margin: 0 auto;
+        font-size: 1.2rem;
     }
 
-    
-
-
-
-    
-    
     .m_flex2{
         /* 버튼부모박스들 공통 */
         display: flex;
@@ -107,7 +98,7 @@
         의 단축속성인 flex:1 을줘도 부모의 사이즈를 찾을수없기때문에 내용만큼판단하여
         늘어나기때문에 라인이 맞지않는것!  즉 inline-block는 값을지정하지 않으면
         inline내용만큼 값을줄경우 block이 되는 유동적인 display다!*/
-        width: 200px;
+        width: 20rem;
         justify-content: space-evenly;
     }
     
@@ -141,12 +132,50 @@
     .m_flex2.menu2-5 .bts:first-child{
         flex-grow: 2;
     }
+
+    .btn{
+        display: flex;
+
+    }
+
+    .btn li {
+        border-radius: 50px;
+        width: 1rem;
+        height: 1rem;
+        margin: 0.3rem 0.3rem;
+        color: black;
+        text-align: center;
+        line-height: 1rem;
+        
+    }
+
+    .btn li:first-child{
+        background-color: red;
+
+    }
+
+    .btn li:nth-child(2){
+        background-color: yellow;
+
+    }
+
+    .btn li:last-child{
+        background-color: green;
+
+    }
     
     
 </style>
 <body>
     <main id="main"><!-- flex부모 -->
         <div class="All">
+            <div>
+                <ul class="btn">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </div>
             <div class="menu1">
                 <div class="m_flex1 menu1-1">
                     <input type="text" value="0">
