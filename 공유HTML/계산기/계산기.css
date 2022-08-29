@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+/********************************기본적인 초기화********************************/
+
+body,html.ul,ol,li,div,input{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/**************************************공사중**************************************/
+
+body{
+    background-image: url(./스크린샷\ 2022-08-29\ 오후\ 12.43.27.png);
+}
+
+body *{
+    /* outline: 1px solid red; */
+    color: rgb(232, 232, 232);
+}
+
+
+/*******************************전체틀*******************************/
+
+#layout{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    
+}
+
+
+#calculator{
+    width: 300px;
+    box-shadow: 1px 1px 10px black;
+    border-radius: 10px;
+    background-color: rgb(34, 31, 35);
+}
+
+
+
+/*****************************상단역역*****************************/
+
+.hd_button input{
+    margin: 3px 5px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    border: none;
+    text-align: center;
+}
+.hd_button input:first-child{
+    background-color: rgb(240, 97, 1);
+}
+.hd_button input:nth-child(2){
+    background-color: rgb(245, 185, 59);
+}
+.hd_button input:last-child{
+    background-color: rgb(65, 154, 59);
+}
+
+.hd_screen input{
+    font-size: 50px;
+    text-align: right;
+    word-spacing: 20px;
+    width: 90%;
+    height: 100px;
+    box-sizing: border-box;
+    background-color: rgb(34, 31, 35);
+    border: none;
+    /* 상위부모에게 줄경우 상단버튼도 동시움직여
+    개별적으로 접근 */
+    display: block;
+    margin: 0 auto;
+
+}
+
+
+/****************************메인 버튼영역****************************/
+
+#container_main input{
+    background-color: rgb(87, 86, 90);
+    font-size: 25px;
+    box-sizing: border-box;
+}
+
+#container_main .md_1 input{
+    background-color: rgb(55, 53, 57);
+}
+
+#container_main div input:last-child{
+    background-color: rgb(244, 156, 40);
+}
+
+.common_flex{
+    display: flex;
+}
+
+.common_flex input{
+    flex: 1;
+    border-radius: 5px;
+    padding: 15px 0;
+}
+
+.md_5 input:first-child{
+    flex-grow: 2;
+}
+
+
+
+
+
+

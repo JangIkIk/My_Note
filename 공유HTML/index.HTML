@@ -6,218 +6,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <style>
 
-    /* 리셋 */
-    body,html,ol,li,ul,div,button{
+    html,body{
         margin: 0;
         padding: 0;
-
     }
 
 
-
-    li{
-        list-style: none;
+    body,html{
+        background-color: gray;
+        height: 90vh;
+        margin: 10px;
+        padding: 10px;
+        
     }
 
-    /*****************************/
-
-    body{
-        background-color: black;
-        height: 100vh;
-    }
+ 
 
     body *{
-        /* outline: 1px solid red; */
+        outline: 1px solid red;
     }
 
-    html{
-        font-size: 15px;
-    }
-
-/* --------------------------------------------- */
-
-
-
-    #main{
-        /* 부모박스 가운데 오도록 설정 */
+    #container{
         display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        color: white;
+        height: 100%;
+        
         
     }
 
-    .All{
-        border: 5px solid darkgray;
+    /********************************************/
+
+    .w10{
+        width: 10%;
     }
 
-    .bts{
-        font-size: 1.2rem;
-        flex: 1;
-        background-color: darkgray;
-        border-radius: 0.5rem;
-        color: white;
-        border: none;
-        margin: 0.2rem;
-        padding: 0.2rem 0;
-        cursor: pointer;
-        
-    }
-    
-    
-   
-    
-    .menu1{
-        background-color: black;
+    .icon{
+        margin: 10px 0;
     }
 
+/* ********************* */
 
-
-
-    .m_flex1.menu1-1 input{
-        display: block;
-        color: aliceblue;
-        background-color: black;
-        border: none;
-        height: 4rem;
-        text-align: right;
-        width: 90%;
-        padding: 0;
-        margin: 0 auto;
-        font-size: 1.2rem;
-    }
-
-    .m_flex2{
-        /* 버튼부모박스들 공통 */
-        display: flex;
-        /* button태그는 인라인블럭이다 .
-        bts에 flex-grow : 1, flex-shrink : 1, flex-basis : 0
-        의 단축속성인 flex:1 을줘도 부모의 사이즈를 찾을수없기때문에 내용만큼판단하여
-        늘어나기때문에 라인이 맞지않는것!  즉 inline-block는 값을지정하지 않으면
-        inline내용만큼 값을줄경우 block이 되는 유동적인 display다!*/
-        width: 20rem;
-        justify-content: space-evenly;
-    }
-    
-
-
-    .m_flex2.menu2-1 .bts{
-        background-color: rgba(94, 93, 93, 0.69);
-
-    }
-    .m_flex2.menu2-1 .bts:last-child{
-        background-color: orange;
-
-    }
-    .m_flex2.menu2-2 .bts:last-child{
-        background-color: orange;
-
-    }
-    .m_flex2.menu2-3 .bts:last-child{
-        background-color: orange;
-
-    }
-    .m_flex2.menu2-4 .bts:last-child{
-        background-color: orange;
-
-    }
-    .m_flex2.menu2-5 .bts:last-child{
-        background-color: orange;
-
-    }
-    
-    .m_flex2.menu2-5 .bts:first-child{
-        flex-grow: 2;
-    }
-
-    .btn{
-        display: flex;
-
-    }
-
-    .btn li {
-        border-radius: 50px;
-        width: 1rem;
-        height: 1rem;
-        margin: 0.3rem 0.3rem;
-        color: black;
-        text-align: center;
-        line-height: 1rem;
+    .w20{
+        width: 20%;
         
     }
 
-    .btn li:first-child{
-        background-color: red;
-
+    .h40{
+        height: 40%;
     }
 
-    .btn li:nth-child(2){
-        background-color: yellow;
-
+    .h20{
+        height: 20%;
     }
 
-    .btn li:last-child{
-        background-color: green;
-
-    }
+    /* ********************* */
     
+    .w70{
+        width: 70%;
+    }
+
+
+    .h80{
+        height: 80%;
+    }
+
+    /* .h20{
+        height: 20%;
+    } */
+
     
+    /***************************************************/
+
+
+    .col{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .w20 > div:first-child{
+        flex-grow: 1;
+        /* flex-shrink: 1;
+        flex-basis: 40%; */
+        margin: 10px;
+        /* flex: 2; */
+    }
+    .w20 > div:nth-child(2){
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 40%;
+        margin: 10px;
+        /* flex:2; */
+    }
+    .w20 > div:last-child{
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 20%;
+        margin: 10px;
+        /* flex:1; */
+    }
+
+
 </style>
 <body>
-    <main id="main"><!-- flex부모 -->
-        <div class="All">
-            <div>
-                <ul class="btn">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-            </div>
-            <div class="menu1">
-                <div class="m_flex1 menu1-1">
-                    <input type="text" value="0">
-                </div>
-            </div>
-            
-            <div class="menu2">
-                <div class="m_flex2 menu2-1">
-                    <input type="button" class="bts" value="AC"></input type="button">
-                    <input type="button" class="bts" value="+/-"></input type="button">
-                    <input type="button" class="bts" value="%"></input type="button">
-                    <input type="button" class="bts" value="÷"></input type="button">
-                </div>
-                <div class="m_flex2 menu2-2">
-                    <input type="button" class="bts" value="7"></input type="button">
-                    <input type="button" class="bts" value="8"></input type="button">
-                    <input type="button" class="bts" value="9"></input type="button">
-                    <input type="button" class="bts" value="x"></input type="button">
-                </div>
-                <div class="m_flex2 menu2-3">
-                    <input type="button" class="bts" value="4"></input type="button">
-                    <input type="button" class="bts" value="5"></input type="button">
-                    <input type="button" class="bts" value="6"></input type="button">
-                    <input type="button" class="bts" value="-"></input type="button">
-                </div>
-                <div class="m_flex2 menu2-4">
-                    <input type="button" class="bts" value="1"></input type="button">
-                    <input type="button" class="bts" value="2"></input type="button">
-                    <input type="button" class="bts" value="3"></input type="button">
-                    <input type="button" class="bts" value="+"></input type="button">
-                </div>
-                <div class="m_flex2 menu2-5">
-                    <input type="button" class="bts" value="0"></input type="button">
-                    <input type="button" class="bts" value="."></input type="button">
-                    <input type="button" class="bts" value="="></input type="button">
-                </div>
-                
-            </div>
-            
 
+    <div id="container">
+        <div class="col w10">
+            <div class="icon">아이콘 1</div>
+            <div class="icon">아이콘 2</div>
+            <div class="icon">아이콘 3</div>
         </div>
-    </main>
+        <div class="col w20">
+            <div class="row h40">영역1</div>
+            <div class="row h40">영역2</div>
+            <div class="row h20">영역3</div>
+        </div>
+        <div class="col w70">
+            <div class="row h80">영역4</div>
+            <div class="row h20">영역5</div>
+        </div>
+      </div>
+
+
     
 </body>
 </html>
