@@ -1,134 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
     <title>Document</title>
-</head>
-
-<style>
-
-    html,body{
-        margin: 0;
-        padding: 0;
-    }
-
-
-    body,html{
-        background-color: gray;
-        height: 90vh;
-        margin: 10px;
-        padding: 10px;
-        
-    }
-
- 
-
-    body *{
-        outline: 1px solid red;
-    }
-
-    #container{
-        display: flex;
-        height: 100%;
-        
-        
-    }
-
-    /********************************************/
-
-    .w10{
-        width: 10%;
-    }
-
-    .icon{
-        margin: 10px 0;
-    }
-
-/* ********************* */
-
-    .w20{
-        width: 20%;
-        
-    }
-
-    .h40{
-        height: 40%;
-    }
-
-    .h20{
-        height: 20%;
-    }
-
-    /* ********************* */
-    
-    .w70{
-        width: 70%;
-    }
-
-
-    .h80{
-        height: 80%;
-    }
-
-    /* .h20{
-        height: 20%;
-    } */
-
-    
-    /***************************************************/
-
-
-    .col{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .w20 > div:first-child{
-        flex-grow: 1;
-        /* flex-shrink: 1;
-        flex-basis: 40%; */
-        margin: 10px;
-        /* flex: 2; */
-    }
-    .w20 > div:nth-child(2){
-        flex-grow: 1;
-        flex-shrink: 1;
-        flex-basis: 40%;
-        margin: 10px;
-        /* flex:2; */
-    }
-    .w20 > div:last-child{
-        flex-grow: 1;
-        flex-shrink: 1;
-        flex-basis: 20%;
-        margin: 10px;
-        /* flex:1; */
-    }
-
-
-</style>
-<body>
-
-    <div id="container">
-        <div class="col w10">
-            <div class="icon">아이콘 1</div>
-            <div class="icon">아이콘 2</div>
-            <div class="icon">아이콘 3</div>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <!-- 최상위 부모 -->
+    <div class="calculator">
+      <!-- 상단영역 -->
+      <div class="display h30">
+        <button>🔴</button>
+        <button>🟡</button>
+        <button>🟢</button>
+        <div>1000</div>
+      </div>
+      <!-- 하단영역 -->
+      <div class="calculator-buttons f_flex">
+        <div class="d-flex h300">
+          <button class="fg-1">AC</button>
+          <button class="fg-1">+/-</button>
+          <button class="fg-1">%</button>
+          <button class="fg-1">÷</button>
         </div>
-        <div class="col w20">
-            <div class="row h40">영역1</div>
-            <div class="row h40">영역2</div>
-            <div class="row h20">영역3</div>
+        <div class="d-flex h300">
+          <button class="fg-1">7</button>
+          <button class="fg-1">8</button>
+          <button class="fg-1">9</button>
+          <button class="fg-1">X</button>
         </div>
-        <div class="col w70">
-            <div class="row h80">영역4</div>
-            <div class="row h20">영역5</div>
+        <div class="d-flex h300">
+          <button class="fg-1">4</button>
+          <button class="fg-1">5</button>
+          <button class="fg-1">6</button>
+          <button class="fg-1">-</button>
+        </div>
+        <div class="d-flex h300">
+          <button class="fg-1">1</button>
+          <button class="fg-1">2</button>
+          <button class="fg-1">3</button>
+          <button class="fg-1">+</button>
+        </div>
+        <div class="d-flex h300 cbx">
+          <button class="fg-1">0</button>
+          <button class="fg-1">.</button>
+          <button class="fg-1">=</button>
         </div>
       </div>
-
-
-    
-</body>
+    </div>
+  </body>
 </html>

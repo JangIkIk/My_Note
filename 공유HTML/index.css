@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+/* 공사중 */
+body *{
+    /* outline: 1px solid red; */
+}
+
+
+
+/*****************초기화*****************/
+html,body,button{
+    margin: 0;
+    padding: 0;
+    /* border: none; */
+
+}
+
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: gray;
+    
+}
+
+.calculator{
+    width: 300px;
+}
+
+
+.d-flex{
+    display: flex;
+}
+
+.fg-1{
+    flex: 1;
+}
+
+.cbx button:first-child{
+    flex-grow:2;
+}
+
+

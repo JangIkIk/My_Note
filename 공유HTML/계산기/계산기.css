@@ -109,6 +109,8 @@ body *{
 
 .md_5 input:first-child{
     flex-grow: 2;
+    /* 완전하게 맞출시에 */
+    /* flex-basis: 79px; */
 }
 
 
