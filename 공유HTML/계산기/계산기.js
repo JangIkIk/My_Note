@@ -11,15 +11,15 @@ window.addEventListener("DOMContentLoaded",()=>{
 
 
 
-     let btn = document.querySelectorAll("#calculator #container_main .common_flex input");
+    //  let btn = document.querySelectorAll("#calculator #container_main .common_flex input");
 
-        btn.addEventListener('click', function(event) {
-        // 버튼을 눌렀을 때 작동하는 함수입니다.
-        comsole.log("테스트");
+    //     btn.addEventListener('click', function(event) {
+    //     // 버튼을 눌렀을 때 작동하는 함수입니다.
+    //     comsole.log("테스트");
 
 
-        // ...
-    })
+    //     // ...
+    // })
 })
 
 /****************** 로더영역 ******************/
