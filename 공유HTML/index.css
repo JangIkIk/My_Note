@@ -1,46 +1,108 @@
-@charset "utf-8";
-
-/* 공사중 */
-body *{
-    /* outline: 1px solid red; */
+html{
+    font-size: 10px;
 }
 
 
-
-/*****************초기화*****************/
-html,body,button{
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* border: none; */
-
-}
-
-
-
-body{
+    border: none;
+    color: white;
+    /* font-size: 24px; */
+  }
+  
+  body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: gray;
+    background-color: lightseagreen;
+  }
+  
+  .container {
+    width: 350px;
+    height: 500px;
+    /* border: 1px solid white; */
+    opacity: 90%;
+    overflow: hidden;
+    resize: both;
+    font-size: 20rem;
     
-}
-
-.calculator{
-    width: 300px;
-}
-
-
-.d-flex{
+  }
+  
+  .d-flex {
     display: flex;
-}
-
-.fg-1{
-    flex: 1;
-}
-
-.cbx button:first-child{
-    flex-grow:2;
-}
-
-
+  }
+  
+  .f-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .w-100 {
+    width: 100%;
+  }
+  
+  .h-20 {
+    height: 20%;
+  }
+  
+  .h-30 {
+    height: 30%;
+  }
+  
+  .h-70 {
+    height: 70%;
+  }
+  
+  .display {
+    background-color: #28282d;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 60px;
+    padding: 0.7rem;
+  }
+  
+  .digit {
+    flex-grow: 1;
+    flex-basis: 0;
+    height: 100%;
+    background-color: #5d5d61;
+    border: 0.5px solid black;
+  }
+  
+  .operator {
+    flex-grow: 1;
+    flex-basis: 0;
+    height: 100%;
+    background-color: #ff9f0b;
+    border: 0.5px solid black;
+  }
+  
+  .option {
+    flex-grow: 1;
+    flex-basis: 0;
+    height: 100%;
+    background-color: #3d3d42;
+    border: 0.5px solid black;
+  }
+  
+  .ac {
+    flex-grow: 1;
+    flex-basis: 0;
+    height: 100%;
+    background-color: #3d3d42;
+    border: 0.5px solid black;
+  }
+  
+  #zero {
+    flex-grow: 2;
+    border-bottom-left-radius: 8px;
+  }
+  
+  .buttons > :last-child > :last-child {
+    border-bottom-right-radius: 8px;
+  }

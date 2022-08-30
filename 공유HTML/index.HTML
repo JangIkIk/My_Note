@@ -2,49 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <!-- 최상위 부모 -->
-    <div class="calculator">
-      <!-- 상단영역 -->
-      <div class="display h30">
-        <button>🔴</button>
-        <button>🟡</button>
-        <button>🟢</button>
-        <div>1000</div>
-      </div>
-      <!-- 하단영역 -->
-      <div class="calculator-buttons f_flex">
-        <div class="d-flex h300">
-          <button class="fg-1">AC</button>
-          <button class="fg-1">+/-</button>
-          <button class="fg-1">%</button>
-          <button class="fg-1">÷</button>
+    <div class="container">
+      <div class="display w-100 h-30">0</div>
+      <div class="buttons h-70 w-100">
+        <div class="d-flex h-20">
+          <button class="ac">AC</button>
+          <button class="option">+/-</button>
+          <button class="option">%</button>
+          <button class="operator">/</button>
         </div>
-        <div class="d-flex h300">
-          <button class="fg-1">7</button>
-          <button class="fg-1">8</button>
-          <button class="fg-1">9</button>
-          <button class="fg-1">X</button>
+        <div class="d-flex h-20">
+          <button class="digit">7</button>
+          <button class="digit">8</button>
+          <button class="digit">9</button>
+          <button class="operator">X</button>
         </div>
-        <div class="d-flex h300">
-          <button class="fg-1">4</button>
-          <button class="fg-1">5</button>
-          <button class="fg-1">6</button>
-          <button class="fg-1">-</button>
+        <div class="d-flex h-20">
+          <button class="digit">4</button>
+          <button class="digit">5</button>
+          <button class="digit">6</button>
+          <button class="operator">-</button>
         </div>
-        <div class="d-flex h300">
-          <button class="fg-1">1</button>
-          <button class="fg-1">2</button>
-          <button class="fg-1">3</button>
-          <button class="fg-1">+</button>
+        <div class="d-flex h-20">
+          <button class="digit">1</button>
+          <button class="digit">2</button>
+          <button class="digit">3</button>
+          <button class="operator">+</button>
         </div>
-        <div class="d-flex h300 cbx">
-          <button class="fg-1">0</button>
-          <button class="fg-1">.</button>
-          <button class="fg-1">=</button>
+        <div class="d-flex h-20">
+          <button id="zero" class="digit">0</button>
+          <button class="digit">.</button>
+          <button class="operator">=</button>
         </div>
       </div>
     </div>
