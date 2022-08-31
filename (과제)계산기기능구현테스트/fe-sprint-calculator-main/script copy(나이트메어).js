@@ -150,9 +150,6 @@ buttons.addEventListener('click', function (event) {
       //here!!
     if (action === 'operator') {
       console.log('연산자 ' + buttonContent + ' 버튼');
-      if(firstNum && operatorForAdvanced &&  previousKey !== "operator"){
-        display.textContent = calculate(firstNum, operatorForAdvanced, display.textContent);
-      }
         firstNum = display.textContent;
         operatorForAdvanced = buttonContent;
         previousKey = "operator";
@@ -171,15 +168,6 @@ buttons.addEventListener('click', function (event) {
 
     if (action === 'decimal') {
       console.log('소수점 버튼');
-      // 점이 하나 이상 나오면 안됩니다.
-      // 점이 하나라도 있는 경우 -> 조건채히주면 되지 않을까?
-      //현재 화면애 떠있는 숫자에 "."이 포함되어 있지않고, 직전에 키가 operator가 아닐때
-      if(!display.textContent.includes(".") && previousKey !== "operator") {
-        display.textContent = display.textContent + ".";
-      } else if(previousKey === "operator"){// 현재 화면에 "."이 포함되어 있거나, 직전에 누른카가 operator일 때
-        display.textContent = "0.";
-      }
-      previousKey = "decimal"
     }
     
 
@@ -200,15 +188,6 @@ buttons.addEventListener('click', function (event) {
 
     if (action === 'calculate') {
       console.log('계산 버튼');
-      if(firstNum){
-
-        if(previousKey === "calculate") {
-          display.textContent = calculate(display.textContent, operatorForAdvanced, previousNum)
-        } else{
-          previousNum = display.textContent;
-          display.textContent = calculate(firstNum, operatorForAdvanced, previousNum)
-        }
-      }
 
       previousNum = display.textContent
       display.textContent = calculate(firstNum.operatorForAdvanced, previousNum)
