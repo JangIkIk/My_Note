@@ -31,12 +31,12 @@ function test(window, expect) {
     bare(window, expect);
   });
   // ! Advanced Challenge test와 Nightmare test를 위해서는 아래 주석을 해제하세요.
-  // describe('Advanced Challenge test', function () {
-  //   advanced(window, expect);
-  // });
-  // describe('Nightmare test', function () {
-  //   nightmare(window, expect);
-  // });
+  describe('Advanced Challenge test', function () {
+    advanced(window, expect);
+  });
+  describe('Nightmare test', function () {
+    nightmare(window, expect);
+  });
 }
 
 function bare(window, expect) {
@@ -60,9 +60,9 @@ function bare(window, expect) {
     };
 
     const clickEvent = new window.MouseEvent('click', {
-      bubbles: true,
-      cancelable: true,
-      view: window,
+      bubbles: true, 
+      cancelable: true, 
+      view: window, 
     });
 
     // const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];

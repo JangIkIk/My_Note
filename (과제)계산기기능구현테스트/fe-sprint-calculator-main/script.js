@@ -1,153 +1,199 @@
 const calculator = document.querySelector('.calculator'); // calculator 엘리먼트와, 그 자식 엘리먼트의 정보를 모두 담고 있습니다.
+// 상위부모 !
 const buttons = calculator.querySelector('.calculator__buttons'); // calculator__keys 엘리먼트와, 그 자식 엘리먼트의 정보를 모두 담고 있습니다.
-
+// 첫번째칸 값!
 const firstOperend = document.querySelector('.calculator__operend--left'); // calculator__operend--left 엘리먼트와, 그 자식 엘리먼트의 정보를 모두 담고 있습니다.
+// 두번째 기호칸!
 const operator = document.querySelector('.calculator__operator'); // calculator__operator 엘리먼트와, 그 자식 엘리먼트의 정보를 모두 담고 있습니다.
+// 세번째칸 값!
 const secondOperend = document.querySelector('.calculator__operend--right'); // calculator__operend--right 엘리먼트와, 그 자식 엘리먼트의 정보를 모두 담고 있습니다.
+// 결과값 칸!
 const calculatedResult = document.querySelector('.calculator__result'); // calculator__result 엘리먼트와, 그 자식 엘리먼트의 정보를 모두 담고 있습니다.
-
-
 
 function calculate(n1, operator, n2) {
   let result = 0;
-  // TODO : n1과 n2를 operator에 따라 계산하는 함수를 만드세요.
-  // ex) 입력값이 n1 : '1', operator : '+', n2 : '2' 인 경우, 3이 리턴됩니다.
-  // let n1 = Number;
-  // let n2 = Number;
+  n1 = parseInt(n1);
+  n2 = parseInt(n2);
 
-  n1 = Number(n1);
-  n2 = Number(n2);
-  
   if(operator === "+"){
     result = n1 + n2;
-  } else if(operator === "-") {
+  } else if(operator === "-"){
     result = n1 - n2;
-  } else if(operator === "*") {
+  }  else if(operator === "*"){
     result = n1 * n2;
-  } else if(operator === "/") {
+  }  else if(operator === "/"){
     result = n1 / n2;
-  }
+  } 
+  // TODO : n1과 n2를 operator에 따라 계산하는 함수를 만드세요.
+  // ex) 입력값이 n1 : '1', operator : '+', n2 : '2' 인 경우, 3이 리턴됩니다.
   return String(result);
 }
 
+// buttons.addEventListener('click', function (event) {
+//   // 버튼을 눌렀을 때 작동하는 함수입니다.
 
-// [1]. calculator_buttons(부모) 안에 있는 자식들을  불러온후
-// click이벤트를 적용!! 대상은? 해당부모 아래의 모든 자식,자손이대상
-//  onclick 도가능 적용방식이다를뿐 ~ 즉 ! onclick = addEventListener 차이
-buttons.addEventListener('click', function (event) {
-  // 버튼을 눌렀을 때 작동하는 함수입니다.
- 
+//   // target 이벤트가 발생한 요소의 정보를 가져옴
+//   const target = event.target; // 클릭된 HTML 엘리먼트의 정보가 저장되어 있습니다.
+//   console.log("targer",target);
+//   // 클래스의요소를가져옴
+//   const action = target.classList[0]; // 클릭된 HTML 엘리먼트에 클레스 정보를 가져옵니다.
+//   console.log("action",action);
 
+//   //타겟의 내용을가져옴
+//   const buttonContent = target.textContent; // 클릭된 HTML 엘리먼트의 텍스트 정보를 가져옵니다.
+//   console.log("버튼",buttonContent);
 
-  // [2]. 클릭이벤트가 발생한 자식(자손)의 전체 정보를 .target 으로가져온후 target변수에대입
-  const target = event.target; // 클릭된 HTML 엘리먼트의 정보가 저장되어 있습니다.
-  console.log(`타켓값=>${target}`);
-
-  // [3]. 이벤트가 발생한 타켓의 클래스리트를 가져옴! 
-  // 여기서 인덱스가 0인이유는 ? 현재 button태그의 클래스는? 하나만존재한다
-  // 하나만 존재한다고 인덱스번호를 기재안할경우 undefind가 된다! 말그대로 리스트다
-  // 리스트중 몇번째 기재를 해야한다.
-  const action = target.classList[0]; // 클릭된 HTML 엘리먼트에 클레스 정보를 가져옵니다.
-  console.log(`액션값=>${action}`)
-
-  //  [4]. 클릭된요소의 내용을 가져온다!
-  //  비슷하게 사용이되는 innerText도 있다
-  //  둘의 차이는? textContent는 공백포함 있는그대로 출력을한다
-  //  그와 반대로 innerText는 불필요한 공간들은 빼고 간추려 출력한다!
-  const buttonContent = target.textContent; // 클릭된 HTML 엘리먼트의 텍스트 정보를 가져옵니다.
-  // ! 위 코드(Line 19 - 21)는 수정하지 마세요.
+//   // ! 위 코드(Line 19 - 21)는 수정하지 마세요.
 
 
-  // [5]. 위에서 target은 이벤트가 발생한 자식(자손)의 정보를 담고있다.
-  // 그 자식(자손)이 button태그가 맞는지 확인을한다
-  // element.matches(`selector`) = true/false /
-  // class, id는 다르지만 button태그가 같은 요소를 찾게도와주는 함수다!
-  // 반대로 태그는 다르지만 돌일한 class, id 의 요소를 찾을수도있다.
-  // 아래와 같이 button태그를 사용한이유는? html태그중 연산자버튼태그는 클래스가 다르기때문
-  if (target.matches('button')) {
-    
-    // [6]. 위에서 액션변수에는 클릭이벤트가발생한 요소의 클래스 정보를 담고있다
-    // 그클래스가 number인지를 비교한다
-    if (action === 'number') {
-      // 그리고 버튼의 클레스가 number이면
-      // 아래 코드가 작동됩니다.
-      console.log('숫자 ' + buttonContent + ' 버튼');
+//   // mqtches 태그/클래스/아이디 를 판별하는 함수!
+//   if (target.matches('button')) {
+//     // TODO : 계산기가 작동할 수 있도록 아래 코드를 수정하세요. 작성되어 있는 조건문과 console.log를 활용하시면 쉽게 문제를 풀 수 있습니다.
+//     // 클릭된 HTML 엘리먼트가 button이면
+//     if (action === 'number') {
 
-      // [7]. 첫번째칸(firstOperend) 의 내용이 0인지를비교!!
-      // 0일경우 첫번째칸의 내용은 = 이벤트발생요소의 내용을가져온다!
-      if(firstOperend.textContent === "0"){
-        firstOperend.textContent = buttonContent;
-      } 
+//       if(firstOperend.textContent === "0") {
+//         firstOperend.textContent = buttonContent;
+//         // textContent 해당요소의 모든정보를가지고옴 (모든공백을가지고옴)
+//         // innerText 해당요소의 불필요한 정보를 가지고옴 (불팔한 공백을 지우고옴)
+//       } else{
+//         secondOperend.textContent = buttonContent;
+//       }
+//       // 그리고 버튼의 클레스가 number이면
+//       // 아래 코드가 작동됩니다.
+//       console.log('숫자 ' + buttonContent + ' 버튼');
+//     }
 
-      // [8]. 첫번째칸의(firstOperend) 의 내용이 0이아닐경우!!
-        // 0이아닐경우는 즉 다른숫자가 있을경우!
-        // 두번째칸의 내용으로 입력됨!
-      else if(firstOperend.textContent !== "0") {
-        secondOperend.textContent = buttonContent;
-      }
+//     if (action === 'operator') {
+      
+//       console.log('연산자 ' + buttonContent + ' 버튼');
+//       if(buttonContent === "+"){
+//         operator.textContent = "+";
+//       } else if(buttonContent === "-"){
+//         operator.textContent = "-";
+//       } else if(buttonContent === "*"){
+//         operator.textContent = "*";
+//       } else if(buttonContent === "/"){
+//         operator.textContent = "/";
+//       }
+//     }
 
+//     if (action === 'decimal') {
+//       // console.log('소수점 버튼');
+      
+//     }
 
+//     if (action === 'clear') {
+//       console.log('초기화 버튼');
+//       firstOperend.textContent = "0";
+//       secondOperend.textContent = "0";
+//       calculatedResult.textContent = "0";
 
-    }
-    // [9]. 클래스가 operator 일경우
-    // 연산기호에 맞게 기호값이 설정됨
-    if (action === 'operator') {
-      operator.textContent = buttonContent;
-      console.log('연산자 ' + buttonContent + ' 버튼');
-    }
+//     }
 
-    // [10].
-    if (action === 'decimal') {
-      // console.log('소수점 버튼');
-    }
+//     if (action === 'calculate') {
+//       console.log('계산 버튼');
+      
+//       calculatedResult.textContent = calculate(firstOperend.textContent,operator.textContent,secondOperend.textContent);
 
-
-    //[11].클래스가 calear일경우 모든값을 0으로 대입!
-    if (action === 'clear') {
-      firstOperend.textContent = "0";
-      secondOperend.textContent = "0";
-      calculatedResult.textContent = "0";
-      // console.log('초기화 버튼');
-
-      }
-
-
-    }
-    // [12]. 클래스가 calculate 일경우
-    // 첫번째값, 두번째값, 기호값을 가지고있는 전역변수를 선언!
-    // 결과값을 담는 변수또한함수를 호출하여 접근하여 calculate값ㅇ
-    if (action === 'calculate') {
-      console.log('계산 버튼');
-      // let n1 = ;
-      // let n2 = ;
-      // let operate = ;
-      calculatedResult.textContent = 
-      calculate(firstOperend.textContent,operator.textContent,secondOperend.textContent)
-    }
-  }
-);
+//     }
+//   }
+// });
 
 
 // ! Advanced Challenge test와 Nightmare test를 위해서는 아래 주석을 해제하세요.
 
+// 화면 변수
 const display = document.querySelector('.calculator__display--for-advanced'); // calculator__display 엘리먼트와, 그 자식 엘리먼트의 정보를 모두 담고 있습니다.
 let firstNum, operatorForAdvanced, previousKey, previousNum;
 
 buttons.addEventListener('click', function (event) {
   // 버튼을 눌렀을 때 작동하는 함수입니다.
 
+
+  // 타켓의 모든요소를 가지고옴
   const target = event.target; // 클릭된 HTML 엘리먼트의 정보가 저장되어 있습니다.
+  // 타겟의 클래스리스투중 0번째 리스트를 가지고옴
   const action = target.classList[0]; // 클릭된 HTML 엘리먼트에 클레스 정보를 가져옵니다.
+  // 타켓의 내용을 가지고옴 ! 즉 문자열내용을 가지고옴
   const buttonContent = target.textContent; // 클릭된 HTML 엘리먼트의 텍스트 정보를 가져옵니다.
   // ! 위 코드는 수정하지 마세요.
 
   // ! 여기서부터 Advanced Challenge & Nightmare 과제룰 풀어주세요.
+
   if (target.matches('button')) {
-    if (action === 'number') {}
-    if (action === 'operator') {}
-    if (action === 'decimal') {}
-    if (action === 'clear') {}
-    if (action === 'calculate') {}
+    if (action === 'number') {
+      console.log('숫자 ' + buttonContent + ' 버튼');
+      // // 주석 
+      // if(operatorForAdvanced === "+" || display.textContent === "0" ){
+      //   display.textContent = buttonContent;
+      // } else if(display.textContent !== "0"){
+      //   display.textContent += buttonContent;
+      // } 
+      //  처음에 0이 있을 때.
+        if(display.textContent === "0" || previousKey === "operator") {
+          display.textContent = buttonContent;
+        } else {
+          display.textContent = display.textContent + buttonContent;
+        }
+        previousKey = "number"
+      
+      //  임시보류 @@@@@@@@@@@@@@@@@
+    //   for(let i = 0 ; 0 < buttonContent.length ; i++){
+    //     display.textContent = buttonContent;
+    //   }
+    //   display.textContent += buttonContent;
+    // }@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    }
+
+
+      //here!!
+    if (action === 'operator') {
+      console.log('연산자 ' + buttonContent + ' 버튼');
+        firstNum = display.textContent;
+        operatorForAdvanced = buttonContent;
+        previousKey = "operator";
+      
+        //  코드를 줄일수없는지확인!!!@@@@@@@@@@@@@@@@@@@@@
+        // operatorForAdvanced = buttonContent;
+        // console.log(operatorForAdvanced,"값이담긴기호");
+
+        // previousKey = display.textContent;
+        // console.log(previousKey,"디스플레이값")  
+        
+
+      
+    }
+    
+
+    if (action === 'decimal') {
+      console.log('소수점 버튼');
+    }
+    
+
+    if (action === 'clear') {
+      console.log('초기화 버튼');
+      // display.textContent = 0;
+      // operatorForAdvanced = "";
+      // previousKey = "";
+
+      // undefined 초기값으로 정해진다
+      display.textContent = "0";
+      firstNum = undefined;
+      operatorForAdvanced = undefined;
+      previousNum = undefined;
+      previousKey = "clear";
+
+    }
+
+    if (action === 'calculate') {
+      console.log('계산 버튼');
+
+      previousNum = display.textContent
+      display.textContent = calculate(firstNum.operatorForAdvanced, previousNum)
+      // display.textContent = calculate(firstNum.operatorForAdvanced, display.textContent)
+      previousKey = "calculate";
+    }
   }
 
 });
