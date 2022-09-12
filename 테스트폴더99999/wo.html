@@ -1,67 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    html, body{
-        margin: 0;
-        padding: 0;
-
-    }
-
-    .wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-}
-.one {
-  grid-column: 1 / 3;
-  grid-row: 1;
-  background-color: lightblue;
-}
-.two {
-  grid-column: 2 / 5;
-  grid-row: 1 / 3;
-  background-color: lightcoral;
-}
-.three {
-  grid-column: 1;
-  grid-row: 2 / 10;
-  background-color: lightgoldenrodyellow;
-}
-.four {
-  grid-column: 3;
-  grid-row: 3;
-  background-color: lightgoldenrodyellow;
-}
-.five {
-  grid-column: 2;
-  grid-row: 4;
-  background-color: lightgreen;
-}
-.six {
-  grid-column: 3;
-  grid-row: 4;
-  background-color:lightsalmon;
-}
-   
-   
-</style>
+<html>
 <body>
-  
-    <div class="wrapper">
-        <!-- <div class="one">One</div> -->
-        <!-- <div class="two">Two</div> -->
-        <!-- <div class="three">Three</div> -->
-        <div class="four">Four</div>
-        <div class="five">Five</div>
-        <div class="six">Six</div>
-      </div>
-    
+  <button class="toggle">toggle</button> <!-- 버튼라인 -->
+  <!--  적용할 클래스 -->
+  <div class="box" style="width: 100px; height: 100px; background: red;"></div>
+
+  <script>
+    var toggleBtn = document.querySelector('.toggle');
+    var box = document.querySelector('.box');
+
+    var toggle = (function () {
+      var isShow = false;
+      
+      
+
+      // TODO: ① 클로저를 반환하는 함수를 작성하세요.
+      return function () {
+         
+        // TODO: ③ isShow 변수의 상태를 변경하는 코드를 작성하세요.
+        // if(isShow === false){
+        //   isShow = true;
+        //   console.log("isShow값 : ",isShow)
+        //   toggleBtn.classList.toggle("box");
+        //   box.style.display = "none";
+          
+        // } else{
+        //   isShow = false;
+        //   console.log("isShow값 : ",isShow)
+        //   toggleBtn.classList.toggle("box");
+        //   box.style.display = "block";
+       
+          // box.style.display = isShow ? 'block' : 'none';
+          // ③ 변수 상태 변경
+          // isShow = !isShow;
+          
+        // }
+
+        
+      }; ///// return 함수 ///////////////
+    }) ////// tooggle 함수 ////////////////
+    ();
+
+    // ② 이벤트 프로퍼티에 클로저를 할당 <적용할클래스>
+    toggleBtn.onclick = toggle;
+  </script>
 </body>
 </html>

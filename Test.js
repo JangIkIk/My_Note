@@ -1,21 +1,16 @@
-
-const print = console.log;
-
-
-let a = [10, 20, 30, 'str'];
-
-let b = {
-  a: 10,
-  b: 20,
-};
-
-
-for(let c of a){
-  print();
+var a = 0;
+function foo() {
+    var b = 0;
+    return function() {
+        console.log(++a, ++b);
+    };
 }
 
+var f1 = foo();
+var f2 = foo();
 
-
-// Object.entries(b).forEach(([key, value], index, arr) => {
-//   print(arr);
-// })
+f1(); // --> A
+f1(); // --> B
+f1(); // --> B
+// f2(); // --> C
+// f2(); // --> D
