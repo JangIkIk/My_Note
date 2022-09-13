@@ -1,8 +1,8 @@
-const student = { name: '최초보', major: '물리학과', lesson: '양자역학', grade: 'B+' }
+// DOM은 script요소를만나면 HTML해석을 잠시 멈추고
+// script요소를 먼저 실행함
 
-function getSummary({ name, lesson, grade }) {
-  return `${name}님은 ${grade}의 성적으로 ${lesson}을 수강했습니다`
-}
+// console.dir는 DOM구조를 조회할때 유용!! (객체의 모습으로 출력!)
 
+//head에 script를 삽입하는경우
+//body끝 라인에 script를 삽입하는경우 -->
 
-console.log(getSummary(student));
