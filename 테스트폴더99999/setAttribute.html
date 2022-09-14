@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: gray;
+    }
+
+    .bts{
+        background-color: red;
+    }
+</style>
+<body>
+    <div>
+    <button id="btn">test</button>
+    </div>
+<script>
+    let A = document.querySelector("#btn");
+
+    A.onclick = function(){
+        console.log("클릭")
+        A.setAttribute("class","bts")
+    }
+    // setAttribute("지정이름","찾는값")
+    // https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute
+</script>
+    
+</body>
+</html>
