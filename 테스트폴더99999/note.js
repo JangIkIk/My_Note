@@ -1,100 +1,68 @@
+// Git Reposutory => 저장소, 말그대로 파일이나 폴더를 저장해두는 곳
+
+// Remote Repository
+// 원격 온라인 서버 상의 저장소 여러 사람이 함께공유 가능
+
+// Local Repository
+// 내 컴퓨터의 저장소
+// 내 개인 전용 저장소
+
+// 코드를 저장할 디렉토리를 만들고 해당 디렉토리에 로컬 Git repository를 생성합니다. (git init)
+// 코드를 작성하고 저장하는 공간, 작업 공간(work space)의 파일 및 디렉토리를 git의 관리 하에 있는 상태로 올려줄 수 있습니다. (git add) 이 영역이 staging area입니다.
+// staging area의 파일은 commit이 가능합니다.
+// commit으로 local Git repository에 내 코드를 기록할 수 있습니다. (git commit)
 
 
-// console.dir는 DOM구조를 조회할때 유용!! (객체의 모습으로 출력!)
-// 일단브라우저 콘솔창에서 사용할수 있는듯하다.
-// 구문: console.dir(document.body) 일경우 children 으로 자식요소를볼수도있다.
-// document.body.children로도 가능하다
-// let newsContents = document.body.children[1] 변수를 선언하여도가능
+// git init => Git repository  추가하기
 
-//자바스크립트로 newsContents의 부모 요소를 가리키는 속성을 찾아보세요. 이 속성은 직접 검색을 통해 확인해 보기 바랍니다.
-//Element.closest() => https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
-// 변수에담긴html요소.closest(찾을요소) => 태그,클래스,id요소구분?
+// # 디렉토리 생성
+// mkdir ~/Desktop/codestates
+// cd ~/Desktop/codestates
+// # 디렉토리 생성
+// mkdir my-app
+// # 디렉토리 이동 (change directory)
+// cd my-app
+// # 파일 생성
+// touch index.html style.css
+// git init : 여기서 git init 을 입력하면 Git 리포지토리가 my-app 디렉토리에 생성됩니다. {작업 공간 디렉토리}/.git 폴더에 Git 활용을 위한 디렉토리가 생성된 것도 확인하실 수 있습니다.
 
-// document.createElement("요소")
-// document.element.append(적용할변수~)
-// body 뿐 아니라 id,class,tag등로 접근해서 추가할수도 있다.
-// Textcontent도 마찬가지 !! 단 () 가아닌 이퀄= 인것을주의하자!
+//git add  : 여러분의 로컬 환경에 있는 디럭토리에 Git 리포지토리가 생성되었기 때문에, 이제 index.html, style.css의 변경사항을 Git으로 관리할 수 있습니다. 각각의 파일에 코드를 작성한 후, 이 코드를 하나로 모아두는 과정을 거치게 되는데 이 공간을 staging area라고 합니다.
+//staging area에 코드를 옮기는 명령어는 git add <경로명>입니다. 여러분의 터미널의 현재 위치가 Git 리포지토리를 생성한 my-app 디렉토리라면, git add index.html , git add style.css 명령어를 사용하면 됩니다. 만약 현재 경로에서 변경이 감지된 모든 파일을 한 번에 추가하려면 git add . 을 입력합니다. (.은 현재 경로를 의미합니다.)
 
-// element.remove()
+//git status :staging area로 잘 옮겨졌는지 확인하기 위해서는 git status 명령어를 입력합니다. 현재 디렉토리에 Git 리포지토리가 잘 설치되어 있다면, 아래와 같이 Git 리포지토리의 상태를 확인할 수 있습니다. 변경이 되었으나 staging area로 옮겨지지 않은 파일은 빨간색 글씨로 표시됩니다.
 
+// git commit -m
+// git commit : 
+// git add <경로명> : 경로에 있는 파일을 staging area로 넣는 명령어
+// staging area: 온전히 저장하고 싶은 코드를 모아놓은 묶음
+// commit
+// staging area의 코드 묶음을 저장하기로 결심하고 (git commit)
+// staging area 코드의 용도를 적어두는 행위 (커밋 메시지 -m "commit message")
+//추가로 사진 파일(code.svg, eat.svg, repeat.svg, sleep.svg)과 소개글(README.md)을 작성하고, commit합니다. 소개글 작성과 사진 파일 제작은 다른 작업으로 보는게 적절하기 때문에, 나눠서 commit합니다.
 
-// innerHTML 은 보안상문제가 있어 사용을안하는편이다 
-// 어떤 보안문제가 있나 ? 공격백터가 되어 짐재적인 보안위험성을 보여줌?? 
-// innerHTML 로 태그를 지울수있는데 이방법말고 removeChild  메서드를 사용하자
-// 만약내용을 입력한다면. TextContent 등 내용을 할수도있다.
-// 추가방법은 위에것을사용 ?
-
-// Create 객채만들기
-// append 추가
-// READ 조회, 읽어오기
-// element.classList.add("클래스이름")
-
-// steAttribute("속성(클래스,아이디)",적용할 속성이름(CSS?))
-//에라이 시팔
-
-//innerHTML 태그전체를!
-// TextContent 내용을!!
-// value는 해당속성의 값을 input태그에 적용되는 ?
+//staging area 란 ? commit하기전에 내용을 기록하는 장소.
 
 
-// html(dom)은 script요소를만나면 HTML해석을 잠시 멈추고
-// script요소를 먼저 실행함
-// * html 문서는 하향식으로 읽는 문서다.
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
+// repository 가져오기 // git clone 깃허브폴더링크
 
-//head에 script를 삽입하는경우
-// script 태그를 읽은후에 html을 읽게된다.
-// 그렇다면 여기서 script에서 연결이되었는 dom요소들을 조작한다면 예기치 못한 오류가 발생할수도있다.
-// 하지만 script가 먼저 실행이되도 문제가 되지않는 스크립트 파일이라면 문제가 없다???
-// html파싱 = > html파싱중단후 script다운 , 실행 => html재파싱
+// 해당 디렉토리에서 추가된파일,변경된 파일들이 어떤것이 있는지 확인할때 // git status
 
-//body끝 라인에 script를 삽입하는경우 -->
-// 해당방법은 html을 읽고 script를 읽기때문에 dom을 먼저 그리게되고 script를 실행하게된다.
-// 콘텐츠에 대해서는 head에 있는 script보다 빠르게 읽을수있다.
-// 하지만 script를 통한 페이지이동을 해야하는경우라면 dom이 먼저그려저도 의미가없다.
+// 로컬의 파일을 staging area로 옴길때는 // git add . (파일명.확장자)로도 가능
 
-//head 안의 async <script async src="스크립트파일"></script>
-//https://jae04099.tistory.com/entry/HTML-script-%ED%83%9C%EA%B7%B8%EB%8A%94-%EC%96%B4%EB%94%94%EC%97%90-%EC%9C%84%EC%B9%98-%ED%95%B4%EC%95%BC-%ED%95%A0%EA%B9%8C
+// 깃헙 리파지토리에 커밋기록을 남기려할때 // gid commit -m '내용'
 
+// 바로이전에 commit한 기록으로 되돌리기 // git reset --hard HEAD^
 
+// 내깃험 리파지토리에 푸쉬하기 // git push
 
+// 내 커밋 로그를 확인하기 // git log
 
+// 새로운저장소를만들거나 git관리하에 들어가게 해주기?(리모트 관련?) // git init
 
+// 리모트에 연결하기 // gir remote add [단축이름] [리파지토리 링크]
 
-// function consoleLogAllElement(element){
-//     // id가 nav인 요소에 접근
-//     let nav = document.getElementById("nav");
-//     // nav의 class 이름을 console.log 합니다.
-//     console.log("nav의 클래스?:",nav);
-//     // nav의 자식 엘리먼트가 있는지 검색합니다. (logo, menu-wrapper)
-//     console.log("nav의 자식들:",nav.children);
-//       //logo의 class 이름을 console.log 합니다.
-//       console.log("logo의 클래스이름 :",nav.children[0].className);
-//       //logo의 자식 엘리먼트가 있는지 검색합니다. (없음)
-//       console.log("logo의 자식들이 있는가?:",nav.children[0].children);
+// 내가 작업한 리파지토리를 리모트 리파지토리에 공유하기 // git push [리모트이름] [브랜치이름]
 
-
-
-//       //menu-wrapper의 class 이름을 console.log 합니다.
-//       console.log("menu-wrapper의 클래스이름:",nav.children[1].className);
-//       //menu-wrapper의 자식 엘리먼트가 있는지 검색합니다. (menu, menu, menu, profile-photo)
-//       console.log("menu-wrapper의 자식들:",nav.children[1].children)
-//         //첫 번째 menu의 class 이름을 console.log 합니다.
-//         console.log("첫번째menu의 클래스이름:",nav.children[1].children[0].className);
-//         //첫 번째 menu의 자식 엘리먼트가 있는지 검색합니다. (없음)
-//         console.log("첫번째menu의 자식:",nav.children[1].children[0].children);
-//         //두 번째 menu의 class 이름을 console.log 합니다.
-//         console.log("두번째menu의 클래스이름:",nav.children[1].children[1].className);
-//         //두 번째 menu의 자식 엘리먼트가 있는지 검색합니다. (없음)
-//         console.log("두번째menu의 자식:",nav.children[1].children[1].children);
-//         //세 번째 menu의 class 이름을 console.log 합니다.
-//         console.log("세번째menu의 클래스이름:",nav.children[1].children[2].className);
-//         //세 번째 menu의 자식 엘리먼트가 있는지 검색합니다. (없음)
-//         console.log("세번째menu의 자식:",nav.children[1].children[2].children);
-//         //profile-photo의 class 이름을 console.log 합니다.
-//         console.log("네번째menu의 자식:",nav.children[1].children[3].className);
-//         //profile-photo의 자식 엘리먼트가 있는지 검색합니다 (없음)
-//         console.log("네번째menu의 자식:",nav.children[1].children[3].children);
-//      //자식 엘리먼트를 모두 탐색했음으로, 함수 실행이 종료됩니다.
-//     //자식 엘리먼트를 모두 탐색했음으로, 함수 실행이 종료됩니다.
-//     }
+// 내local에 리파지토리 이름 등록하기 // git remote add [이름] url

@@ -1,0 +1,14 @@
+@charset "urf-8";
+
+body *{
+    outline:  1px solid red;
+}
+
+body{
+    background-color: gray;
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+}
