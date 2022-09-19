@@ -1,0 +1,41 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+
+}
+
+li{
+    list-style: none;
+}
+
+body{
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+}
+
+.pargination ul{
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.pargination ul li{
+    line-height: 50px;
+    text-align: center;
+    
+    
+}
+
+.pargination ul li.num{
+    height: 50px;
+    width: 50px;
+}
