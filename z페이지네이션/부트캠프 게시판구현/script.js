@@ -106,6 +106,7 @@ const getPageStartEnd = (limit, page) => {
 };
 
 const buttons = document.querySelector(".buttons"); // 패이지 넘기버튼의 부모요소에 접근
+console.log(buttons);
 buttons.children[0].addEventListener("click", () => { // 부모요에 클릭이벤트가 발생시에!!
   console.log(buttons.children[0],"버튼요소의 0번쨰아들?");
   if (page > 1) { 
