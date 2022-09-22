@@ -1,137 +1,161 @@
 
+      // function Person(first, last, age, gender, interests) {
+      //   this.name = {
+      //     'first': first,
+      //     'last' : last
+      //   };
+      //   this.age = age;
+      //   this.gender = gender;
+      //   this.interests = interests;
+      //   this.bio = function() {
+      //     // First define a string, and make it equal to the part of
+      //     // the bio that we know will always be the same.
+      //     var string = this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. ';
+      //     // define a variable that will contain the pronoun part of
+      //     // the second sentence
+      //     var pronoun;
 
-// function calculateScore(records, value) {
-//     // TODO: Your code here!
-//    //  animal값이 이 문자열과 일치할경우 
-//    // 해당요소의 score 속성값을 모두 더한후에 리턴
-  
-//     let a = records.filter(function(e){
-//       if(typeof e.animal === "string"){
-//         return e. score;
-//       }
-  
-//     return a.reduce(function(a,b ){
-//       return a + b;
-//     })
-  
-//     })
-    
-  
-//   }
-// @@@@@ 누적개념 확인
+      //     // check what the value of gender is, and set pronoun
+      //     // to an appropriate value in each case
+      //     if(this.gender === 'male' || this.gender === 'Male' || this.gender === 'm' || this.gender === 'M') {
+      //       pronoun = 'He likes ';
+      //     } else if(this.gender === 'female' || this.gender === 'Female' || this.gender === 'f' || this.gender === 'F') {
+      //       pronoun = 'She likes ';
+      //     } else {
+      //       pronoun = 'They like ';
+      //     }
 
+      //     // add the pronoun string on to the end of the main string
+      //     string += pronoun;
 
-// function getLengthOfLongestElement(arr) {
-//     // 여기에 코드를 입력하세요
-  
-//     return arr.reduce(function(a,b){
-//       if(a.length >= b.length){
-//         console.log("비교값",a.length);
-//         console.log("비교값",b.length);
-//         return a.length;
-//       } else{
-//         console.log("비교값",b.length);
-//         return b.length;
-//       }
-//     });
-  
-//   }
+      //     // use another conditional to structure the last part of the
+      //     // second sentence depending on whether the number of interests
+      //     // is 1, 2, or 3
+      //     if(this.interests.length === 1) {
+      //       string += this.interests[0] + '.';
+      //     } else if(this.interests.length === 2) {
+      //       string += this.interests[0] + ' and ' + this.interests[1] + '.';
+      //     } else {
+      //       // if there are more than 2 interests, we loop through them
+      //       // all, adding each one to the main string followed by a comma,
+      //       // except for the last one, which needs an and & a full stop
+      //       for(var i = 0; i < this.interests.length; i++) {
+      //         if(i === this.interests.length - 1) {
+      //           string += 'and ' + this.interests[i] + '.';
+      //         } else {
+      //           string += this.interests[i] + ', ';
+      //         }
+      //       }
+      //     }
 
-  
-//   let output = getLengthOfLongestElement(['one', 'two', 'no']);
-//     console.log("최종값",output); // --> 5
+      //     // finally, with the string built, we alert() it
+      //     alert(string);
+      //   };
+      //   this.greeting = function() {
+      //     alert('Hi! I\'m ' + this.name.first + '.');
+      //   };
+      // };
 
-// 왜 no의 length로 나오는지 ?
-
-
-// function makeAddressBook(addressBook, user) {
-//     let firstLetter = user.name[0];
-//     console.log(addressBook)
-  
-//     if(firstLetter in addressBook) {
-//       addressBook[firstLetter].push(user);
-//     } else {
-//       addressBook[firstLetter] = [];
-//       addressBook[firstLetter].push(user);
-//     }
-  
-//     return addressBook;
-//   }
-  
-//   let users = [
-//     { name: 'Tim', age: 40 },
-//     { name: 'Satya', age: 30 },
-//     { name: 'Sundar', age: 50 }
-//   ];
-  
-//   users.reduce(makeAddressBook, {});
-//   console.log(users);
-  
-// function makeAddressBook(addressBook, user) {
-//     let firstLetter = user.name[0];
-  
-//     if(firstLetter in addressBook) {
-//       addressBook[firstLetter].push(user);
-//     } else {
-//       addressBook[firstLetter] = [];
-//       addressBook[firstLetter].push(user);
-//     }
-  
-//     return addressBook;
-//   }
-  
-//   let users = [
-//     { name: 'Tim', age: 40 },
-//     { name: 'Satya', age: 30 },
-//     { name: 'Sundar', age: 50 }
-//   ];
-  
-//  let r = users.reduce(makeAddressBook, {});
-// console.log(r)
+      // let person1 = new Person('Tammi', 'Smith', 32, 'neutral', ['music', 'skiing', 'kickboxing']);
+      // console.log(person1.string);
 
 
-// class Car{
-//     constructor(brand, name, color){
-//         this.brand = brand;
-//         this.name = name;
-//         this.color = color;
-
-//         Car.prototype.drive = function(){
-//             console.log("운전하기")
-//         }
-//     }
-// }
-
-// let my = new Car("kia","k5","black");
-
-// console.log(my.brand);
-// my.drive();
-
-// console.log(my); // 객체형태를 가지고있다
-
-class movie {
-    constructor(){
-        this.value = 0;
-    }
-    increase(){
-        this.value++
-    }
-    decrease(){
-        this.value--
-    }
-    getValue(){
-        return this.value
-    }
-}
-
-let cont = new Counter();
-cont.increase();
-cont.increase();
-cont.decrease();
-console.log(cont.getValue());
+      // class Person {
+      //   constructor(first, last, age, gender, interests) {
+      //     this.name = {
+      //       first,
+      //       last
+      //     };
+      //     this.age = age;
+      //     this.gender = gender;
+      //     this.interests = interests;
+      //   }
+      
+      //   greeting() {
+      //     console.log(`Hi! I'm ${this.name.first} ${this.name.last}`);
+      //   };
+      
+      //   farewell() {
+      //     console.log(`${this.name.first} has left the building. Bye for now!`);
+      //   };
+      // }
 
 
+      // // let han = new Person('Han', 'Solo', 25, 'male', ['Smuggling']);
+      // // han.greeting();
 
-  
 
-  
+      // // let leia = new Person('Leia', 'Organa', 19, 'female' ['Government']);
+      // // leia.farewell();
+
+
+      // // class Teacher extends Person {
+      // //   constructor(first, last, age, gender, interests, subject, grade) {
+      // //     this.name = {
+      // //       first,
+      // //       last
+      // //     };
+      
+      // //   this.age = age;
+      // //   this.gender = gender;
+      // //   this.interests = interests;
+      // //   // subject and grade are specific to Teacher
+      // //   this.subject = subject;
+      // //   this.grade = grade;
+      // //   }
+      // // }
+
+      //   class Teacher extends Person {
+      //     constructor(first, last, age, gender, interests, subject, grade) {
+      //       super(first, last, age, gender, interests);
+        
+      //       // subject and grade are specific to Teacher
+      //       this.subject = subject;
+      //       this.grade = grade;
+      //     }
+      //   }
+
+        
+
+
+      // //super()연산자는 상위 클래스의 생성자를 호출하며 super()를 통해 상위클래스의 멤버를 상속받을수 있음
+      // let snape = new Teacher('Severus', 'Snape', 58, 'male', ['Potions'], 'Dark arts', 5);
+      // // snape.greeting(); // Hi! I'm Severus.
+      // // snape.farewell(); // Severus has left the building. Bye for now.
+      // // snape.age // 58
+      // // console.log(snape.subject); // Dark arts
+      // // console.log(snape.grade);
+
+      
+      // console.log(snape.__proto__); // 최초의 프로토타입을 탐색할수있음
+      // console.log(snape.__proto__.__proto__); // 최초의 프로토타입을 탐색할수있음
+      // console.log(snape.__proto__.__proto__.__proto__); // 최초의 프로토타입을 탐색할수있음
+      // console.log(snape.__proto__.__proto__.__proto__.__proto__); // 최초의 프로토타입을 탐색할수있음
+
+
+      let div = document.createElement('div');
+
+      console.log(div.__proto__)
+      // div.__proto__.__proto__
+      // div.__proto__.__proto__.__proto__
+      // div.__proto__.__proto__.__proto__.__proto__
+      // div.__proto__.__proto__.__proto__.__proto__.__proto__
+      // div.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__
+      // div.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__
+
+      // 프로토타입 체인을 사용하여 객체 지향 프로그램의 특성중 상속을 구현!!
+      // 꼭 들어가야 할 키워드
+      // 프로토타입 체인
+      // // .prototype
+      // // .__proto__ // 상속관계를 확인할때 쓰임
+      // // Object
+      // // 블로그는 사전에 안내된 수강생 노션 페이지를 이용하여 작성합니다.
+      
+      
+
+
+
+
+
+      
+      
