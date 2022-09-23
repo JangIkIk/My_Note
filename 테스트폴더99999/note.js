@@ -159,6 +159,52 @@
 
 
 
+// 전달인자의 개수를 알수가 없으므로 rest문법을사용!
+function pipe(...funcs) {
+      console.log("레스트문법",funcs);
+      //  함수를 리턴해준다
+    return function (num) {
+      // 전달받은 number 인자를 result에 넣어준다 
+      let result = num;
+      console.log("result",result)
+      // rest문법의 길이만큼 for문을 돈다! 즉! 함수의 개수만큼 함수가 3개라면 길이는 3!
+      for (let i = 0; i < funcs.length; i++) {
+            // console.log("결과",funcs[i](result))
+            console.log("funcs",funcs[i])
+        // result에 funcs[0]첫번째 함수에 num값을 인자로 전달하여 결과값을
+        // rssult에 할당!
+        result = funcs[i](result);
+      }
+      // for문이 funcs의 길이만큼 다돌고 난후 result를 리턴!
+      return result;
+    };
+  }
+
+  function square(num) {
+      return num * num;
+    }
+    
+    function add5(num) {
+      return num + 5;
+    }
+    
+    function mul3(num) {
+      return num * 3;
+    }
+    
+    function isOdd(num) {
+      return num % 2 !== 0;
+    }
+    
+    let output = pipe(add5, square);
+    console.log(output(4)); // --> 81
+    
+//     output = pipe(square, add5, mul3);
+//     console.log(output(4)); // --> 63
+    
+//     output = pipe(square, mul3, add5, add5, isOdd);
+//     console.log(output(4)); // --> false
+
 
 
 
