@@ -157,53 +157,70 @@
 // 기본(base) 클래스일 경우는 기본 생성자는 비어있으며, 파생(derived) 클래스일 경우 기본 생성자는 부모 생성자를 부릅니다.
       
 
+// function add(collection, iteratee) {
+//   // TODO: 여기에 코드를 작성합니다.
+//   if(Array.isArray(collection)){
+//     for(let i = 0 ; i < collection.length ; i++){
+//         iteratee(collection[i],i,collection);
+        
+//     }
+//   } else{
+//     for(let i in collection){
+//       iteratee(collection[i],i,collection) 
+      
+//   }
+//   }
 
 
-// 전달인자의 개수를 알수가 없으므로 rest문법을사용!
-function pipe(...funcs) {
-      console.log("레스트문법",funcs);
-      //  함수를 리턴해준다
-    return function (num) {
-      // 전달받은 number 인자를 result에 넣어준다 
-      let result = num;
-      console.log("result",result)
-      // rest문법의 길이만큼 for문을 돈다! 즉! 함수의 개수만큼 함수가 3개라면 길이는 3!
-      for (let i = 0; i < funcs.length; i++) {
-            // console.log("결과",funcs[i](result))
-            console.log("funcs",funcs[i])
-        // result에 funcs[0]첫번째 함수에 num값을 인자로 전달하여 결과값을
-        // rssult에 할당!
-        result = funcs[i](result);
-      }
-      // for문이 funcs의 길이만큼 다돌고 난후 result를 리턴!
-      return result;
-    };
+
+// };
+
+
+// const letters = ['a', 'b', 'c'];
+// const iterations = [];
+// add(letters, function (letter, index, collection) {
+//   iterations.push([letter, index, collection]);
+//   console.log(iterations);
+// });
+
+
+
+let arr = [1, 2, 2, 3, 4, 4];
+let result = [];
+
+  
+for(let i = 0 ; i < arr.length ; i++){
+  for(let j = 0 ; j <= result.length ; j++){
+    if(arr[i] ===)
   }
+}
 
-  function square(num) {
-      return num * num;
-    }
-    
-    function add5(num) {
-      return num + 5;
-    }
-    
-    function mul3(num) {
-      return num * 3;
-    }
-    
-    function isOdd(num) {
-      return num % 2 !== 0;
-    }
-    
-    let output = pipe(add5, square);
-    console.log(output(4)); // --> 81
-    
-//     output = pipe(square, add5, mul3);
-//     console.log(output(4)); // --> 63
-    
-//     output = pipe(square, mul3, add5, add5, isOdd);
-//     console.log(output(4)); // --> false
+
+
+
+// var selectionSort = function(array) {
+//   var length = array.length;
+//   var minIndex, temp, i, j;
+//   for (i = 0; i < length - 1; i++) { // 처음부터 훑으면서
+//     minIndex = i;
+//     for (j = i + 1; j < length; j++) { // 최솟값의 위치를 찾음
+//       if (array[j] < array[minIndex]) {
+//         minIndex = j;
+//       }
+//     }
+//     temp = array[minIndex]; // 최솟값을 저장
+//     array[minIndex] = array[i];
+//     array[i] = temp; // 최솟값을 제일 앞으로 보냄
+//   }
+//   return array;
+// };
+
+// console.log(selectionSort([5,1,4,7,2,6,8,3]));
+
+
+
+
+
 
 
 
