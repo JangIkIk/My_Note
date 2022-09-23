@@ -133,9 +133,9 @@
       // console.log(snape.__proto__.__proto__.__proto__.__proto__); // 최초의 프로토타입을 탐색할수있음
 
 
-      let div = document.createElement('div');
+      // let div = document.createElement('div');
 
-      console.log(div.__proto__)
+      // console.log(div.__proto__)
       // div.__proto__.__proto__
       // div.__proto__.__proto__.__proto__
       // div.__proto__.__proto__.__proto__.__proto__
@@ -150,8 +150,22 @@
       // // .__proto__ // 상속관계를 확인할때 쓰임
       // // Object
       // // 블로그는 사전에 안내된 수강생 노션 페이지를 이용하여 작성합니다.
+
       
+// 생성자 함수는 인스턴스 객체를 생성하고 초기화하는 특별한 메서드입니다.
+// 생성자 함수를 작성하지 않으면, 기본 생성자(default constructor)가 제공되며,
+// 기본(base) 클래스일 경우는 기본 생성자는 비어있으며, 파생(derived) 클래스일 경우 기본 생성자는 부모 생성자를 부릅니다.
       
+
+
+
+
+
+
+
+
+
+
 
 
 
