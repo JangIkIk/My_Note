@@ -1,16 +1,44 @@
-const posts = [
-  {title: "Hello World", content: "Welcome to learning React!" },
-  {title: "Installation", content: "You can install React via npm." },
-];
+// // const { StrictMode } = require("react");
 
+// function convertDoubleSpaceToSingle(str) {
+//   // TODO: 여기에 코드를 작성합니다.
+//   // let STR = [...str]
+//   // console.log(STR)
 
-function Blog() {
-  const po = posts.map((data)=>{
-    console.log(data.title);
-    console.log(data.content);
-  })
+//   // for(let i = 0 ; i < STR.length; i++){
+//   //   if(STR.length[i] === STR.lengtj[i+1]){
+//   //     StrictMode.replace(" ");
+      
+//   //    }
+//   // }
+//   // let result = str.replace("  "," ",2);
+// // 
+//   // return result;
 
-  return po;
+//   // return str.split("  ");
+  
+
+//   return str.split("  ").join(" ");
+  
+// }
+
+function convertDoubleSpaceToSingle(str) {
+  let result = '';
+  let before = '';
+  for (let i = 0; i < str.length; i++) {
+  
+    if (before !== ' ' || str[i] !== ' ') {
+      result = result + str[i];
+      console.log("result",str[i]);
+    }
+    
+    before = str[i];
+    console.log("before",before)
+  }
+  return result;
 }
 
-Blog();
+
+
+let output = convertDoubleSpaceToSingle('string  with  double');
+console.log(output); // --> "string with double spaces
