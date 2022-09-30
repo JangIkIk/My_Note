@@ -1,44 +1,25 @@
-// // const { StrictMode } = require("react");
+function ABCheck(str) {
 
-// function convertDoubleSpaceToSingle(str) {
-//   // TODO: 여기에 코드를 작성합니다.
-//   // let STR = [...str]
-//   // console.log(STR)
+if (str === undefined) {
+  return false;
+}
 
-//   // for(let i = 0 ; i < STR.length; i++){
-//   //   if(STR.length[i] === STR.lengtj[i+1]){
-//   //     StrictMode.replace(" ");
-      
-//   //    }
-//   // }
-//   // let result = str.replace("  "," ",2);
-// // 
-//   // return result;
+str = str.toLowerCase();
+console.log("입력받은 문자열을 소문자로!:",str);
 
-//   // return str.split("  ");
-  
-
-//   return str.split("  ").join(" ");
-  
-// }
-
-function convertDoubleSpaceToSingle(str) {
-  let result = '';
-  let before = '';
-  for (let i = 0; i < str.length; i++) {
-  
-    if (before !== ' ' || str[i] !== ' ') {
-      result = result + str[i];
-      console.log("result",str[i]);
-    }
-    
-    before = str[i];
-    console.log("before",before)
+for (let i = 4; i < str.length; i++) {
+  if ((str[i] === 'a' && str[i - 4] === 'b') || (str[i] === 'b' && str[i - 4] === 'a')) {
+    console.log(i);
+    console.log("입력받은 문자열의 i번째 순번의 값은 : ",str[i]);
+    console.log("입력받은 문자열의 i-4번째 순번의 값은 :",str[i-4]);
+    return true;
   }
-  return result;
+}
+
+return false;
+
 }
 
 
-
-let output = convertDoubleSpaceToSingle('string  with  double');
-console.log(output); // --> "string with double spaces
+let output = ABCheck('aMAJ7sBrO4CyysuoHFrgGTX');
+console.log(output);

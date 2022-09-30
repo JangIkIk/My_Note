@@ -1,0 +1,19 @@
+.main_dot{
+    background-color:  gray;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.md_lable{
+    width: 200px;
+    height: 100px;
+    background-color: red;
+}
+
+.md_input{
+    width: 100px;
+    height: 50px;
+    background-color: aquamarine;
+}
+
