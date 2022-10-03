@@ -1,9 +1,4 @@
-.md_toggle{
-    color: aquamarine;
-}
 
-
-/* 부모라인 */
 .toggle{
     position: relative;
     background-color: black;
@@ -14,21 +9,13 @@
 }
 
 
-/* 자식 input : 클릭시 속성을 사용하기위한역할*/  
 .toggle_input{
-    /* position: relative; */
-    /* display: inline-block; */
-    /* width: 100px; */
-    /* height: 100px; */
     width: 0;
     height: 0;
     margin: 0;
-    
-    
 }
 
 
-/* 자식 span : 배경역할 */
 .toggle_span{
     position: absolute;
     top: 0;
@@ -37,35 +24,31 @@
     right: 0;
     background-color:gray;
     border-radius: 50px;
-
 }
 
 
-/* 자식 span태그 가상요소  : 버튼클릭시 움직이는 원형요소*/
 .toggle_span::before{
     position: absolute;
-    content: "";
+    content: "OFF";
     background-color: white;
     height: 50px;
     width: 50px;
     left: 4px;
     bottom: 25%;
     border-radius: 50%;
-    transition: 0.4s ease-in-out;
-
+    transition: 0.6s ease-in-out;
+    text-align: center;
+    line-height: 49px;
+    font-weight: bolder;
 }
 
-
-/* css의사 클래스 선택자 :checked는
-type = "radio" type = "checkbox" 의 타입에만사용할수있으며
-사용자가 요소를 체크하면 활성화 , 체크해제하면 비활성화가 된다!
-input:checked +(형제선택자중) 다른요소!!*/
 .toggle_input:checked + .toggle_span{
     background-color: darkcyan;
+    
 }
 .toggle_input:checked + .toggle_span::before{
     background-color: darkblue;
-    /* transform: translateX(100%); */
-    
-    
+    content: "ON";
+    color: white;
+    left: 146px;
 }
