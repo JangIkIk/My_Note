@@ -74,23 +74,56 @@
 // // console.log(dummyTweets[0])
 
 
+function removeExtremes(arr) {
+  // 배열의 최대길이
+  let shortestLen = 20;
+  // 배열의 최소길이
+  let longestLen = 0;
+  //  배열 최대길이의 인덱스
+  let longestIdx = 0;
+  //  배열 최소길이의 인덱스
+  let shortestIdx = 0;
 
-function insertDash(str) {
-  // TODO: 여기에 코드를 작성합니다.
-
-  const result = "";
-  for(let i = 0; i < str.length ; i++){
-    if(str[i],str[i+1] %2 !== 0){
-      result = result + str[i];
+  //  받은 arr의 길이만큼반복
+  for (let i = 0; i < arr.length; i++) {
+    // 만약 arr i번째의 길이가 지정해놓은 최대길이보다크다면
+    if (arr[i].length >= longestLen) {
+      // 지정해놓은 최대길이에 할당
+      longestLen = arr[i].length;
+      console.log("최대길이:",longestLen);
+      // 지정해놓은 인덱스에 최대길이의 인덱스 할당
+      longestIdx = i;
+      console.log("최대길이인덱스:",longestIdx);
+      console.log("__")
     }
 
-    result+=str[i];
-    
+    // 위와같음
+    if (arr[i].length <= shortestLen) {
+      shortestLen = arr[i].length;
+      console.log("최소길이:",shortestLen);
+      shortestIdx = i;
+      console.log("최소길이인덱스:",shortestIdx);
+      console.log("__")
+    }
   }
-  return result;
 
+  // 최대, 최소를 담기위한 빈배열 선언
+  let result = [];
+  //다시 받은 배열의 길이만큼반복
+  for (let i = 0; i < arr.length; i++) {
+    // i가 최소 인덱스와 같지 않고 i가 최대 인덱스와 같지않으면
+    if (i !== shortestIdx && i !== longestIdx) {
+      // 선언해놓은 빈배열에 추가
+      result.push(arr[i]);
+    }
+  }
+
+  return result;
 }
 
 
-let output = insertDash('454793');
-console.log(output); // --> 4547-9-3
+let output = removeExtremes(['a', 'b', 'c', 'def']);
+// console.log(output); // --> ['a', 'b']
+
+output = removeExtremes(['where', 'is', 'the', 'longest', 'word']);
+console.log(output); // --> ['where', 'the', 'word',]
