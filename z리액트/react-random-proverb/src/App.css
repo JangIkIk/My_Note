@@ -1,15 +1,139 @@
+html,body,h1,h2,h3,ul,li,ol,button{
+  /* 각태그 초기화 */
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+li{
+  /* 리스트 블릿제거 */
+  list-style: none;
+}
+
+body{
+  /* 배경색 및 뷰단위 */
+  height: 100vh;
+  background-color: gray;
+}
+
+body *{
+  /* 임시공사중 */
+  outline: 1px solid red;
+}
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^초기화 영역^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
 
 
-.App{
+
+
+
+
+
+
+
+
+/************************** App.js **************************/
+/* 최상위부모 */
+.container{
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  /* height: 100vh; */
+  align-content: center;
+  width: 300px;
+  height: 100vh;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+/*****************************Stars.css*****************************/
+/* 부모<ul> => 자식은 <li> */
+.dot_star{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  text-align: center;
+}
+
+/*부모<li> => 자식은 <span>*/
+.li_star{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  
+  
+}
+/* 자식 <span> */
+.star{
+  position: absolute;
+  background-color: white;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  cursor: pointer;
+}
+
+/* .li_star:hover .dv1,
+.li_star:hover .dv2,
+.li_star:hover .dv3,
+.li_star:hover .dv4,
+.li_star:hover .dv5{
+  background-color: yellow;
+  
+} */
+
+/* .dv1{
+  background-color: yellow;
+} */
+/* .dv1{
+  background-color: yellow;
+}
+.dv1{
+  background-color: yellow;
+}
+.dv1{
+  background-color: yellow;
+}
+.dv1{
+  background-color: yellow;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+/***************************** Submit.css *****************************/
+/* 리뷰등록 버튼 */
+.submitStar{
+  padding: 10px;
+  margin: 10px;
+  
   
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************************************************************/
 /* .App {
   text-align: center;
 }

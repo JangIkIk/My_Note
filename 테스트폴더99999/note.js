@@ -74,56 +74,98 @@
 // // console.log(dummyTweets[0])
 
 
-function removeExtremes(arr) {
-  // 배열의 최대길이
-  let shortestLen = 20;
-  // 배열의 최소길이
-  let longestLen = 0;
-  //  배열 최대길이의 인덱스
-  let longestIdx = 0;
-  //  배열 최소길이의 인덱스
-  let shortestIdx = 0;
+// function removeExtremes(arr) {
+//   // 배열의 최대길이
+//   let shortestLen = 20;
+//   // 배열의 최소길이
+//   let longestLen = 0;
+//   //  배열 최대길이의 인덱스
+//   let longestIdx = 0;
+//   //  배열 최소길이의 인덱스
+//   let shortestIdx = 0;
 
-  //  받은 arr의 길이만큼반복
-  for (let i = 0; i < arr.length; i++) {
-    // 만약 arr i번째의 길이가 지정해놓은 최대길이보다크다면
-    if (arr[i].length >= longestLen) {
-      // 지정해놓은 최대길이에 할당
-      longestLen = arr[i].length;
-      console.log("최대길이:",longestLen);
-      // 지정해놓은 인덱스에 최대길이의 인덱스 할당
-      longestIdx = i;
-      console.log("최대길이인덱스:",longestIdx);
-      console.log("__")
-    }
+//   //  받은 arr의 길이만큼반복
+//   for (let i = 0; i < arr.length; i++) {
+//     // 만약 arr i번째의 길이가 지정해놓은 최대길이보다크다면
+//     if (arr[i].length >= longestLen) {
+//       // 지정해놓은 최대길이에 할당
+//       longestLen = arr[i].length;
+//       console.log("최대길이:",longestLen);
+//       // 지정해놓은 인덱스에 최대길이의 인덱스 할당
+//       longestIdx = i;
+//       console.log("최대길이인덱스:",longestIdx);
+//       console.log("__")
+//     }
 
-    // 위와같음
-    if (arr[i].length <= shortestLen) {
-      shortestLen = arr[i].length;
-      console.log("최소길이:",shortestLen);
-      shortestIdx = i;
-      console.log("최소길이인덱스:",shortestIdx);
-      console.log("__")
+//     // 위와같음
+//     if (arr[i].length <= shortestLen) {
+//       shortestLen = arr[i].length;
+//       console.log("최소길이:",shortestLen);
+//       shortestIdx = i;
+//       console.log("최소길이인덱스:",shortestIdx);
+//       console.log("__")
+//     }
+//   }
+
+//   // 최대, 최소를 담기위한 빈배열 선언
+//   let result = [];
+//   //다시 받은 배열의 길이만큼반복
+//   for (let i = 0; i < arr.length; i++) {
+//     // i가 최소 인덱스와 같지 않고 i가 최대 인덱스와 같지않으면
+//     if (i !== shortestIdx && i !== longestIdx) {
+//       // 선언해놓은 빈배열에 추가
+//       result.push(arr[i]);
+//     }
+//   }
+
+//   return result;
+// }
+
+
+// let output = removeExtremes(['a', 'b', 'c', 'def']);
+// // console.log(output); // --> ['a', 'b']
+
+// output = removeExtremes(['where', 'is', 'the', 'longest', 'word']);
+// console.log(output); // --> ['where', 'the', 'word',]
+
+
+  function readVertically(arr) {
+    // TODO: 여기에 코드를 작성합니다.
+    // 배열안의 값을 순회돌면서 첫번째값들은 먼저넣는다
+  // arr[0][0], arr[1][0] , arr[0][1], arr[1][1]
+  // 1. arr 0번째 요소인 hello를 str변수에
+  // 2. j for문에서 5의길이만큼 반복
+  
+  
+   let temp = [];
+   console.log('temp:',temp);
+    for (let i = 0; i < arr.length; i++) {
+      let str = arr[i];
+      console.log('str:',str);
+      for (let j = 0; j < str.length; j++) {
+        if (temp.length === j) {
+          console.log(temp.length === j)
+          temp.push(str[j]);
+          console.log(temp.push(str[j]));
+        } else {
+          temp[j] = temp[j] + str[j];
+        }
+      }
     }
+  
+    let result = '';
+    for (let i = 0; i < temp.length; i++) {
+      result = result + temp[i];
+    }
+  
+    return result;
+    
   }
 
-  // 최대, 최소를 담기위한 빈배열 선언
-  let result = [];
-  //다시 받은 배열의 길이만큼반복
-  for (let i = 0; i < arr.length; i++) {
-    // i가 최소 인덱스와 같지 않고 i가 최대 인덱스와 같지않으면
-    if (i !== shortestIdx && i !== longestIdx) {
-      // 선언해놓은 빈배열에 추가
-      result.push(arr[i]);
-    }
-  }
-
-  return result;
-}
-
-
-let output = removeExtremes(['a', 'b', 'c', 'def']);
-// console.log(output); // --> ['a', 'b']
-
-output = removeExtremes(['where', 'is', 'the', 'longest', 'word']);
-console.log(output); // --> ['where', 'the', 'word',]
+let input = [
+  //
+  'hello',
+  'wolrd',
+];
+let output = readVertically(input);
+console.log(output); // --> 'hweolllrod'
