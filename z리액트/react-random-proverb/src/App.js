@@ -20,7 +20,6 @@ function App() {
    return (
       <div className="container">
          <Stars/>
-         <Submit/>
       </div>
    )
 }

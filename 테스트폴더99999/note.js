@@ -129,43 +129,48 @@
 // console.log(output); // --> ['where', 'the', 'word',]
 
 
-  function readVertically(arr) {
-    // TODO: 여기에 코드를 작성합니다.
-    // 배열안의 값을 순회돌면서 첫번째값들은 먼저넣는다
-  // arr[0][0], arr[1][0] , arr[0][1], arr[1][1]
-  // 1. arr 0번째 요소인 hello를 str변수에
-  // 2. j for문에서 5의길이만큼 반복
+//   function readVertically(arr) {
+//     // TODO: 여기에 코드를 작성합니다.
+//     // 배열안의 값을 순회돌면서 첫번째값들은 먼저넣는다
+//   // arr[0][0], arr[1][0] , arr[0][1], arr[1][1]
+//   // 1. arr 0번째 요소인 hello를 str변수에
+//   // 2. j for문에서 5의길이만큼 반복
   
   
-   let temp = [];
-   console.log('temp:',temp);
-    for (let i = 0; i < arr.length; i++) {
-      let str = arr[i];
-      console.log('str:',str);
-      for (let j = 0; j < str.length; j++) {
-        if (temp.length === j) {
-          console.log(temp.length === j)
-          temp.push(str[j]);
-          console.log(temp.push(str[j]));
-        } else {
-          temp[j] = temp[j] + str[j];
-        }
-      }
-    }
+//    let temp = [];
+//    console.log('temp:',temp);
+//     for (let i = 0; i < arr.length; i++) {
+//       let str = arr[i];
+//       console.log('str:',str);
+//       for (let j = 0; j < str.length; j++) {
+//         if (temp.length === j) {
+//           console.log(temp.length === j)
+//           temp.push(str[j]);
+//           console.log(temp.push(str[j]));
+//         } else {
+//           temp[j] = temp[j] + str[j];
+//         }
+//       }
+//     }
   
-    let result = '';
-    for (let i = 0; i < temp.length; i++) {
-      result = result + temp[i];
-    }
+//     let result = '';
+//     for (let i = 0; i < temp.length; i++) {
+//       result = result + temp[i];
+//     }
   
-    return result;
+//     return result;
     
-  }
+//   }
 
-let input = [
-  //
-  'hello',
-  'wolrd',
-];
-let output = readVertically(input);
-console.log(output); // --> 'hweolllrod'
+// let input = [
+//   //
+//   'hello',
+//   'wolrd',
+// ];
+// let output = readVertically(input);
+// console.log(output); // --> 'hweolllrod'
+
+// Array(5).fill(0).map((v,i)=> i + 1)
+const arr = Array(5).fill(0).map( (v,i,) => i+1) ;
+
+console.log(arr);
