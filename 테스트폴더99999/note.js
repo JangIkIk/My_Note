@@ -170,7 +170,8 @@
 // let output = readVertically(input);
 // console.log(output); // --> 'hweolllrod'
 
-// Array(5).fill(0).map((v,i)=> i + 1)
-const arr = Array(1)
+let pass = true;
 
-console.log(arr);
+pass = pass && false
+
+console.log(pass)
