@@ -12,7 +12,7 @@
 // staging area의 파일은 commit이 가능합니다.
 // commit으로 local Git repository에 내 코드를 기록할 수 있습니다. (git commit)
 
-
+/dd
 // git init => Git repository  추가하기
 
 // # 디렉토리 생성
