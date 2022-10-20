@@ -1,5 +1,6 @@
 import React from "react";
 import './App.css';
+import Children from "./component/children";
 
 
 
@@ -7,11 +8,12 @@ import './App.css';
 
 
 function App() {
+   console.log("연속적인실행?")
    return (
-      <div className="home">
-         <p>컴포넌트의 구성</p>
-      </div>
+      <Children/>
    )
 }
+
+
 export default App;
 
