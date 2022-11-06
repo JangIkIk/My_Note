@@ -1,64 +1,34 @@
-function reverseArr(arr) {
+let tiling = function (n) {
     // TODO: 여기에 코드를 작성합니다.
+    
+    const result = [0, 1, 2];
   
-      if(arr.length === 0){
-        return []
-      }
+  
+    // result = [0,1,2,3]
+    // result = [0,1,2,3,5]
+  
+    for (let i = 3; i <= n; i++) {
+      result[i] = result[i-1] + result[i-2];
+    //   console.log(result);
+    }
 
-
-    // console.log(`${arr.slice(1)}.concat(arr[${arr[0]}]) = ${arr.slice(1).concat(arr[0])}`)
-    const result = reverseArr(arr.slice(1)).concat(arr[0]);
     console.log(result);
-    return result;
+    return result[n]
   
-  }
+  };
 
-  let output = reverseArr([1, 2, 3]);
-console.log(output); // --> [3, 2, 1]
+//   output = tiling(4);
+// console.log(output); // --> 5
+
+
+
+let arr = [0, 1, 2, 3, 5];
+
+function add(n){
+    return n
+}
+
+let a = add(arr);
+
+console.log(a);
   
-
-
-// const print = console.log;
-
-// function fibonacci(n, v, depth=0) {
-//   let msg = '';
-
-//   if (depth == 0) {
-//     print(`[${v}] n: ${n}`)
-//   } else {
-//     let d = ' '.repeat(depth * 2);
-//     if (v == 'L') {
-//       msg = `${n + 1} - 1`;
-//     } else {
-//       msg = `${n + 2} - 2`;
-//     }
-
-//     print(`${d}[${v}] ${msg} (${n})`)
-//   }
-
-//   if ( n <= 1 ) {
-//     return n;
-//   }
-
-//   depth++;
-//   return fibonacci(n-1, 'L', depth) + fibonacci(n-2, 'R', depth);
-// }
-
-// fibonacci(3, 'Root');
-
-/*
-
-3
-
-3 - 1 = 2;
-
-2 - 1 = 1; return 
-
-
-
-
-
-
-
-6. 
-*/
