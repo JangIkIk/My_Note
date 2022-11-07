@@ -1,7 +1,7 @@
 @charset "urf-8";
 
 body *{
-    outline:  1px solid red;
+    /* outline:  1px solid red; */
 }
 
 body{
@@ -13,10 +13,33 @@ html,body{
     padding: 0;
 }
 
-*{
-    flex-direction: center;
-    align-items: center;
-    position: relative;
-    position: absolute;
-    z-index: 1;
+.test{
+    text-align: center;
 }
+
+.point{
+    position: relative;
+    
+}
+
+.point::after{
+    content: "";
+    background-color: blue;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    position: absolute;
+    
+}
+
+/* .layout{
+    background-color: black;
+    height: 2px;
+    color: red;
+    
+}
+
+.content{
+    background-color: red;
+    height: 5px;
+} */
