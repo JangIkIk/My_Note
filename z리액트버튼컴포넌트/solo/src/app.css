@@ -23,3 +23,10 @@ button {
 .plusBtn {
   margin-right: 10px;
 }
+
+.card_back{
+  background-color: black;
+}
+.card_front{
+  background-color: blue;
+}

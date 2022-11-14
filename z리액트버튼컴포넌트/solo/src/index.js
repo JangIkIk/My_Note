@@ -39,7 +39,7 @@ const counterReducer = (state, action)=>{
 }
 
 const store = createStore(counterReducer, 1)
-console.log(store.getState())
+// console.log(store.getState())
 
 
 root.render(
